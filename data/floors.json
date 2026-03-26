@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "The Velvet Room",
+    "subtitle": "Someone always wins here. Tonight it isn't you.",
+    "description": "A classic underground casino. Jazz plays softly. The danger feels distant.",
+    "atmosphere": "velvet",
+    "score_multiplier": 1.0,
+    "boss_rule": {
+      "id": "no_green",
+      "name": "House Advantage",
+      "description": "0 pays nothing this round. The house keeps it.",
+      "flavor": "They smiled when they told you."
+    }
+  },
+  {
+    "id": 2,
+    "name": "The Iron Parlour",
+    "subtitle": "Gears turn. Odds shift. The wheel never forgets.",
+    "description": "Victorian steampunk. Mechanical wheels. Secret society symbols on every wall.",
+    "atmosphere": "iron",
+    "score_multiplier": 1.4,
+    "boss_rule": {
+      "id": "odd_death",
+      "name": "Odd Numbered Curse",
+      "description": "All odd numbers pay half their normal winnings.",
+      "flavor": "The Brotherhood of the Wheel plays by different rules."
+    }
+  },
+  {
+    "id": 3,
+    "name": "The Neon Purgatory",
+    "subtitle": "The lights flicker. The wheel glitches. Nothing is real.",
+    "description": "Cyberpunk arcade casino. Digital corruption bleeds through the walls.",
+    "atmosphere": "neon",
+    "score_multiplier": 1.9,
+    "boss_rule": {
+      "id": "outside_only",
+      "name": "System Lockout",
+      "description": "Straight-up bets are disabled. Only outside bets allowed.",
+      "flavor": "ERROR: DIRECT ACCESS DENIED."
+    }
+  },
+  {
+    "id": 4,
+    "name": "The Sunken Hall",
+    "subtitle": "Ancient. Watching. Hungry.",
+    "description": "Underwater. Bioluminescent. The old gods invented gambling long before you.",
+    "atmosphere": "sunken",
+    "score_multiplier": 2.5,
+    "boss_rule": {
+      "id": "rising_tide",
+      "name": "Rising Tide",
+      "description": "The target score increases by 200 with each spin taken.",
+      "flavor": "The tide always wins."
+    }
+  },
+  {
+    "id": 5,
+    "name": "The Devil's Floor",
+    "subtitle": "You made a deal. Now pay.",
+    "description": "Hell. The wheel is a ring of fire. The Devil is the dealer. One last game.",
+    "atmosphere": "infernal",
+    "score_multiplier": 3.5,
+    "boss_rule": {
+      "id": "devils_deal",
+      "name": "The Devil's Deal",
+      "description": "Every loss costs you an extra 20 chips. Every win doubles.",
+      "flavor": "Did you really think you could beat the house in Hell?"
+    }
+  }
+]

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <circle cx="64" cy="64" r="60" fill="#1a1a2e"/>
+  <circle cx="64" cy="64" r="55" fill="none" stroke="#c9a84c" stroke-width="3"/>
+  <!-- Wheel sectors suggestion -->
+  <path d="M64,9 A55,55 0 0,1 119,64" fill="none" stroke="#8b0000" stroke-width="8"/>
+  <path d="M119,64 A55,55 0 0,1 64,119" fill="none" stroke="#111" stroke-width="8"/>
+  <path d="M64,119 A55,55 0 0,1 9,64" fill="none" stroke="#8b0000" stroke-width="8"/>
+  <path d="M9,64 A55,55 0 0,1 64,9" fill="none" stroke="#111" stroke-width="8"/>
+  <circle cx="64" cy="64" r="18" fill="#c9a84c"/>
+  <circle cx="64" cy="64" r="12" fill="#1a1a2e"/>
+  <!-- Ball -->
+  <circle cx="64" cy="18" r="6" fill="white"/>
+</svg>

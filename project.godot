@@ -1,0 +1,39 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are all documented there.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Roulette Roguelite"
+config/description="A roguelite game inspired by Balatro, using roulette mechanics. Beat the House across five cursed casino realms to win back your soul."
+run/main_scene="res://scenes/Main.tscn"
+config/features=PackedStringArray("4.3", "Mobile")
+config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1080
+window/size/viewport_height=1920
+window/size/resizable=false
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep"
+window/handheld/orientation=1
+
+[autoload]
+
+Constants="*res://scripts/utils/Constants.gd"
+GameManager="*res://scripts/autoloads/GameManager.gd"
+ModManager="*res://scripts/autoloads/ModManager.gd"
+AudioManager="*res://scripts/autoloads/AudioManager.gd"
+
+[rendering]
+
+renderer/rendering_method="mobile"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/canvas_textures/default_texture_filter=0
