@@ -14,6 +14,8 @@ var _boss_banner:    Panel  # shown on boss rounds
 
 var _notif_tween:    Tween  = null
 var _score_tween:    Tween  = null
+var _glow_overlay:   ColorRect   # full-screen flash for round win
+var _bar_glow:       Panel       # glow layer behind the progress bar
 
 func _ready() -> void:
 	_build_ui()
@@ -71,6 +73,27 @@ func _build_ui() -> void:
 	_score_bar.add_theme_stylebox_override("background", bg_style)
 	bar_container.add_child(_score_bar)
 
+	# ── Score bar glow layer (drawn behind progress bar, pulses on score gain) ─
+	_bar_glow = Panel.new()
+	_bar_glow.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	_bar_glow.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var glow_style := StyleBoxFlat.new()
+	glow_style.bg_color       = Color(0.0, 0.0, 0.0, 0.0)
+	glow_style.shadow_color   = Constants.COLOR_GOLD
+	glow_style.shadow_size    = 0
+	glow_style.shadow_offset  = Vector2.ZERO
+	_bar_glow.add_theme_stylebox_override("panel", glow_style)
+	_bar_glow.modulate.a = 0.0
+	bar_container.add_child(_bar_glow)
+	bar_container.move_child(_bar_glow, 0)  # behind the bar
+
+	# ── Full-screen flash overlay for round win ───────────────────────────────
+	_glow_overlay = ColorRect.new()
+	_glow_overlay.color           = Color(0.9, 0.78, 0.2, 0.0)
+	_glow_overlay.mouse_filter    = Control.MOUSE_FILTER_IGNORE
+	_glow_overlay.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	add_child(_glow_overlay)
+
 	# ── Spins remaining ──────────────────────────────────────────────────────
 	_spins_label = _make_label("⟳ 5 spins", 16)
 	_spins_label.set_anchors_preset(Control.PRESET_TOP_RIGHT)
@@ -112,6 +135,7 @@ func _connect_signals() -> void:
 	GameManager.chips_changed.connect(_on_chips_changed)
 	GameManager.score_changed.connect(_on_score_changed)
 	GameManager.round_started.connect(_on_round_started)
+	GameManager.round_won.connect(_on_round_won)
 	ModManager.mod_triggered.connect(_on_mod_triggered)
 
 # ─── Signal handlers ─────────────────────────────────────────────────────────
@@ -127,6 +151,8 @@ func _on_score_changed(score: int, tgt: int) -> void:
 	_score_tween.set_ease(Tween.EASE_OUT)
 	_score_tween.set_trans(Tween.TRANS_QUAD)
 	_score_tween.tween_property(_score_bar, "value", float(score), 0.4)
+	# Glow pulse on the bar
+	_pulse_bar_glow(score >= tgt)
 
 func _on_round_started(info: Dictionary) -> void:
 	_floor_label.text = "%s · Round %d" % [info.get("floor_name", "Floor %d" % info.get("floor", 1)), info.get("round", 1)]
@@ -161,6 +187,27 @@ func _on_mod_triggered(_id: String, description: String) -> void:
 	_notif_tween.tween_property(_mod_notif, "modulate:a", 0.0, 0.5)
 
 # ─── Helpers ─────────────────────────────────────────────────────────────────
+
+func _on_round_won() -> void:
+	# Gold screen flash when round target is beaten
+	_glow_overlay.color.a = 0.0
+	var t := create_tween()
+	t.tween_property(_glow_overlay, "color:a", 0.45, 0.12)
+	t.tween_property(_glow_overlay, "color:a", 0.0,  0.55)
+	# Score bar fills gold briefly
+	var fill_style := _score_bar.get_theme_stylebox("fill") as StyleBoxFlat
+	if fill_style:
+		var orig := fill_style.bg_color
+		var t2 := create_tween()
+		t2.tween_property(fill_style, "bg_color", Color.WHITE, 0.15)
+		t2.tween_property(fill_style, "bg_color", Constants.COLOR_GOLD, 0.35)
+
+func _pulse_bar_glow(is_complete: bool) -> void:
+	var color := Color(1.0, 1.0, 0.6, 0.0) if is_complete else Color(0.7, 0.9, 0.7, 0.0)
+	_bar_glow.modulate.a = 1.0
+	_glow_overlay.color  = Color(color.r, color.g, color.b, 0.0)
+	var t := create_tween()
+	t.tween_property(_bar_glow, "modulate:a", 0.0, 0.5)
 
 func _make_label(text: String, fsize: int, bold: bool = false) -> Label:
 	var lbl := Label.new()

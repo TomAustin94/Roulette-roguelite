@@ -116,17 +116,25 @@ func _build_mod_card(mod: Dictionary) -> Panel:
 
 	var hbox := HBoxContainer.new()
 	hbox.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	hbox.add_theme_constant_override("separation", 12)
+	hbox.add_theme_constant_override("separation", 10)
 	var inner := MarginContainer.new()
 	inner.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	inner.add_theme_constant_override("margin_left",   12)
+	inner.add_theme_constant_override("margin_left",   10)
 	inner.add_theme_constant_override("margin_right",  12)
 	inner.add_theme_constant_override("margin_top",    10)
 	inner.add_theme_constant_override("margin_bottom", 10)
 	panel.add_child(inner)
 	inner.add_child(hbox)
 
-	# Left: info
+	# Icon (left edge)
+	var icon := ModIcon.new()
+	icon.category   = mod.get("category", "utility")
+	icon.icon_color = border_color
+	icon.custom_minimum_size = Vector2(52, 52)
+	icon.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	hbox.add_child(icon)
+
+	# Info vbox
 	var info_vbox := VBoxContainer.new()
 	info_vbox.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	info_vbox.add_theme_constant_override("separation", 4)

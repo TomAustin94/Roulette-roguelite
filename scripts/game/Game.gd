@@ -6,12 +6,12 @@ extends Control
 var _hud:           HUD
 var _wheel:         RouletteWheel
 var _table:         BettingTable
-var _result_panel:  Panel
-var _result_label:  Label
 var _spin_btn:      Button
 var _clear_btn:     Button
 var _chip_bar:      HBoxContainer
-var _wheel_panel:   Control   # container for wheel + result overlay
+var _wheel_panel:   Control        # container for wheel + overlays
+var _dealer:        DealerCharacter
+var _win_popup:     WinPopup
 
 # Current selected chip value
 var _selected_chip: int = 5
@@ -69,29 +69,19 @@ func _build_scene() -> void:
 	_wheel_panel.add_child(_wheel)
 	_wheel.spin_finished.connect(_on_wheel_spin_finished)
 
-	# Result overlay (centered over wheel)
-	_result_panel = Panel.new()
-	_result_panel.set_anchors_preset(Control.PRESET_CENTER)
-	_result_panel.custom_minimum_size = Vector2(360, 90)
-	_result_panel.position             = Vector2(-180, -45)
-	_result_panel.visible              = false
-	var rp_style := StyleBoxFlat.new()
-	rp_style.bg_color     = Color(0.0, 0.0, 0.0, 0.88)
-	rp_style.border_color = Constants.COLOR_GOLD
-	for side in ["left","right","top","bottom"]:
-		rp_style.set("border_width_" + side, 2)
-	for corner in ["top_left","top_right","bottom_left","bottom_right"]:
-		rp_style.set("corner_radius_" + corner, 12)
-	_result_panel.add_theme_stylebox_override("panel", rp_style)
-	_wheel_panel.add_child(_result_panel)
+	# ── Dealer character (left side of wheel panel) ───────────────────────────
+	_dealer = DealerCharacter.new()
+	_dealer.char_scale = 1.15
+	# Position: left side of wheel panel, vertically centred
+	_dealer.position = Vector2(160, 280)
+	_wheel_panel.add_child(_dealer)
 
-	_result_label = Label.new()
-	_result_label.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	_result_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	_result_label.vertical_alignment   = VERTICAL_ALIGNMENT_CENTER
-	_result_label.add_theme_font_size_override("font_size", 20)
-	_result_label.add_theme_color_override("font_color", Color.WHITE)
-	_result_panel.add_child(_result_label)
+	# ── Win popup (centred over wheel, hidden until spin resolves) ────────────
+	_win_popup = WinPopup.new()
+	_win_popup.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	_win_popup.visible = false
+	_wheel_panel.add_child(_win_popup)
+	_win_popup.dismissed.connect(_on_popup_dismissed)
 
 	# ── Betting table (fills remaining space) ─────────────────────────────────
 	_table = BettingTable.new()
@@ -153,6 +143,10 @@ func _connect_signals() -> void:
 	GameManager.spin_resolved.connect(_on_spin_resolved)
 	GameManager.round_started.connect(_on_round_started)
 	GameManager.round_won.connect(_on_round_won)
+	ModManager.mod_triggered.connect(_on_mod_triggered)
+
+func _on_mod_triggered(_id: String, description: String) -> void:
+	_win_popup.show_mod_bonus(description)
 
 # ─── Chip selector ────────────────────────────────────────────────────────────
 
@@ -235,33 +229,11 @@ func _on_wheel_spin_finished(winning_number: int) -> void:
 
 func _on_spin_resolved(winning_number: int, winnings: int, score_gained: int) -> void:
 	_table.clear_display()
-	_show_result(winning_number, winnings, score_gained)
 	_hud.update_spins(GameManager.spins_left)
+	_win_popup.show_result(winning_number, winnings, score_gained)
 
-func _show_result(number: int, winnings: int, score_gained: int) -> void:
-	var ncolor_name := Constants.get_number_color(number)
-	var win_color   := Constants.COLOR_GOLD if winnings > 0 else Color(0.75, 0.55, 0.55)
-
-	var color_tag: String
-	match ncolor_name:
-		"red":   color_tag = "RED"
-		"black": color_tag = "BLACK"
-		_:       color_tag = "GREEN"
-
-	if winnings > 0:
-		_result_label.text = "[%s] %d\n+%d chips  •  +%d score" % [color_tag, number, winnings, score_gained]
-	else:
-		_result_label.text = "[%s] %d\nNo win  •  +%d score" % [color_tag, number, score_gained]
-
-	_result_label.add_theme_color_override("font_color", win_color)
-	_result_panel.visible = true
-
-	var t := create_tween()
-	t.tween_interval(2.4)
-	t.tween_callback(func():
-		_result_panel.visible = false
-		GameManager.continue_after_result()
-	)
+func _on_popup_dismissed() -> void:
+	GameManager.continue_after_result()
 
 func _on_state_changed(new_state: GameManager.GameState) -> void:
 	match new_state:
