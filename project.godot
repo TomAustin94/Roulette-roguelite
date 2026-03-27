@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Roulette Roguelite"
+config/name="The Devil's Deal"
 config/description="A roguelite game inspired by Balatro, using roulette mechanics. Beat the House across five cursed casino realms to win back your soul."
 run/main_scene="res://scenes/Main.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
@@ -31,6 +31,8 @@ Constants="*res://scripts/utils/Constants.gd"
 GameManager="*res://scripts/autoloads/GameManager.gd"
 ModManager="*res://scripts/autoloads/ModManager.gd"
 AudioManager="*res://scripts/autoloads/AudioManager.gd"
+SaveManager="*res://scripts/autoloads/SaveManager.gd"
+HighScoreManager="*res://scripts/autoloads/HighScoreManager.gd"
 
 [rendering]
 

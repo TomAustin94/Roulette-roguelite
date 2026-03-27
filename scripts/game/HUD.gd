@@ -3,6 +3,8 @@
 class_name HUD
 extends Control
 
+signal pause_pressed
+
 var _floor_label:  Label
 var _target_label: Label
 var _score_bar:    ProgressBar
@@ -48,6 +50,27 @@ func _build_ui() -> void:
 	_chips_label.size_flags_horizontal = Control.SIZE_SHRINK_END
 	_chips_label.add_theme_color_override("font_color", Constants.COLOR_GOLD)
 	top_row.add_child(_chips_label)
+
+	# Pause button (small, right of chips)
+	var pause_btn := Button.new()
+	pause_btn.text = "❙❙"
+	pause_btn.custom_minimum_size = Vector2(52, 36)
+	pause_btn.add_theme_font_size_override("font_size", 14)
+	pause_btn.add_theme_color_override("font_color", Color(0.62, 0.57, 0.44))
+	var ps := StyleBoxFlat.new()
+	ps.bg_color = Color(0.06, 0.10, 0.06, 0.80)
+	for c in ["top_left","top_right","bottom_left","bottom_right"]:
+		ps.set("corner_radius_" + c, 6)
+	for s in ["left","right","top","bottom"]:
+		ps.set("border_width_" + s, 1)
+	ps.border_color = Color(0.35, 0.30, 0.15, 0.45)
+	pause_btn.add_theme_stylebox_override("normal", ps)
+	var ph := ps.duplicate() as StyleBoxFlat
+	ph.bg_color = Color(0.12, 0.18, 0.12)
+	pause_btn.add_theme_stylebox_override("hover", ph)
+	pause_btn.add_theme_stylebox_override("pressed", ps)
+	pause_btn.pressed.connect(func(): pause_pressed.emit())
+	top_row.add_child(pause_btn)
 
 	# ── Row 2: Score bar ──────────────────────────────────────────────────────
 	var bar_margin := MarginContainer.new()
