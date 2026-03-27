@@ -130,7 +130,7 @@ func _make_floor_dots() -> Control:
 	container.add_theme_constant_override("separation", 14)
 	container.custom_minimum_size = Vector2(0, 28)
 
-	var floors_cleared := GameManager.run_stats.get("floors_cleared", 0)
+	var floors_cleared: int = GameManager.run_stats.get("floors_cleared", 0)
 	for i in 5:
 		var dot := ColorRect.new()
 		dot.custom_minimum_size = Vector2(14, 14)

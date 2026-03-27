@@ -605,7 +605,7 @@ func _select_chip(index: int) -> void:
 		var btn := _chip_bar.get_child(i) as Button
 		if not btn:
 			continue
-		var selected := (btn.get_meta("chip_value", -1) == _selected_chip)
+		var selected: bool = (btn.get_meta("chip_value", -1) == _selected_chip)
 		var style := btn.get_theme_stylebox("normal") as StyleBoxFlat
 		if style:
 			style.border_color = Constants.COLOR_HIGHLIGHT if selected else Constants.CHIP_COLORS[i].lightened(0.3)

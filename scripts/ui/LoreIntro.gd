@@ -166,7 +166,7 @@ func _build_ui() -> void:
 # ─── Panel logic ──────────────────────────────────────────────────────────────
 
 func _show_panel(idx: int) -> void:
-	var data := PANELS[idx]
+	var data: Dictionary = PANELS[idx]
 	_panel_lbl.text  = "%d / %d" % [idx + 1, PANELS.size()]
 	_title_lbl.text  = data["title"]
 	_body_lbl.text   = ""
