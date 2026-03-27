@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="432" height="768" viewBox="0 0 432 768" style="background:#0D120D">
+<!-- RESULT SCREEN: PLAYER WINS — dealer is sad/frustrated, player celebrates -->
+<defs>
+<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+<path d="M40,0 L0,0 0,40" fill="none" stroke="#ffffff06" stroke-width="0.5"/>
+</pattern>
+<radialGradient id="winGlow" cx="50%" cy="40%" r="55%">
+<stop offset="0%" stop-color="#2A5A2A40"/>
+<stop offset="100%" stop-color="transparent"/>
+</radialGradient>
+</defs>
+<rect width="432" height="768" fill="url(#grid)"/>
+<rect width="432" height="768" fill="url(#winGlow)"/>
+<rect x="0" y="0" width="432" height="3" fill="#E6BF33"/>
+
+<!-- ===== HUD ===== -->
+<rect x="0" y="3" width="432" height="72" fill="#0A140A"/>
+<rect x="0" y="75" width="432" height="1" fill="#E6BF3828"/>
+<text x="16" y="22" font-family="sans-serif" font-size="10" fill="#A09878" letter-spacing="2">FLOOR 1 · ROUND 1 · SPIN 3 / 5</text>
+<text x="16" y="44" font-family="Georgia,serif" font-size="18" font-weight="bold" fill="#E6BF33">The Velvet Room</text>
+<text x="416" y="44" font-family="Georgia,serif" font-size="22" font-weight="bold" fill="#E6BF33" text-anchor="end">♦ 235</text>
+<rect x="16" y="58" width="400" height="5" rx="2" fill="#1A2A1A"/>
+<rect x="16" y="58" width="248" height="5" rx="2" fill="#4AAA4A"/>
+<text x="16" y="71" font-family="sans-serif" font-size="9" fill="#706050">248 / 400 pts</text>
+
+<!-- ===== WIN BANNER ===== -->
+<rect x="0" y="76" width="432" height="54" fill="#0E2A0E"/>
+<rect x="0" y="76" width="432" height="54" fill="none" stroke="#2A6A2A" stroke-width="0"/>
+<!-- Decorative side elements -->
+<line x1="0" y1="76" x2="432" y2="76" stroke="#4AAA4A" stroke-width="2"/>
+<line x1="0" y1="130" x2="432" y2="130" stroke="#4AAA4A40" stroke-width="1"/>
+<text x="216" y="112" font-family="Georgia,serif" font-size="26" font-weight="bold" fill="#4AAA4A" text-anchor="middle" letter-spacing="8">WIN</text>
+<!-- Flourish diamonds -->
+<path d="M 80,103 L 86,109 L 80,115 L 74,109 Z" fill="#4AAA4A60"/>
+<path d="M 352,103 L 358,109 L 352,115 L 346,109 Z" fill="#4AAA4A60"/>
+
+<!-- ===== WINNING NUMBER (HERO ELEMENT) ===== -->
+<rect x="124" y="142" width="184" height="120" rx="16" fill="#6A0808"/>
+<rect x="124" y="142" width="184" height="120" rx="16" fill="none" stroke="#CC2020" stroke-width="3"/>
+<!-- Inner border decoration -->
+<rect x="130" y="148" width="172" height="108" rx="13" fill="none" stroke="#DD303050" stroke-width="1"/>
+<text x="216" y="200" font-family="Georgia,serif" font-size="72" font-weight="bold" fill="#FFFFFF" text-anchor="middle">17</text>
+<text x="216" y="248" font-family="Georgia,serif" font-size="16" fill="#FF8080" text-anchor="middle" letter-spacing="4">RED</text>
+
+<!-- ===== DEALER (SAD / DEFEATED after player wins) ===== -->
+<!-- Dealer occupies left half below winning number -->
+<rect x="0" y="278" width="210" height="222" fill="#0A0F0A"/>
+
+<!-- Dealer body -->
+<rect x="40" y="362" width="90" height="110" rx="10" fill="#1C0B32"/>
+<polygon points="85,370 68,394 85,406 102,394" fill="#F0EAD8" opacity="0.9"/>
+<polygon points="80,391 85,398 90,391 85,384" fill="#9E1010"/>
+<!-- Arms (slumped/crossed) -->
+<path d="M 40,382 Q 20,402 22,445" stroke="#1C0B32" stroke-width="28" fill="none" stroke-linecap="round"/>
+<path d="M 130,382 Q 148,402 145,440" stroke="#1C0B32" stroke-width="28" fill="none" stroke-linecap="round"/>
+<!-- Hands (fists, annoyed) -->
+<ellipse cx="24" cy="450" rx="14" ry="12" fill="#C49060"/>
+<ellipse cx="143" cy="445" rx="14" ry="12" fill="#C49060"/>
+<!-- Head -->
+<ellipse cx="85" cy="330" rx="38" ry="42" fill="#C49060"/>
+<!-- Hair -->
+<path d="M 47,319 Q 51,290 85,286 Q 119,290 123,319 Q 116,304 85,300 Q 54,304 47,319 Z" fill="#1E1008"/>
+<!-- Sideburns -->
+<rect x="47" y="318" width="9" height="28" rx="3" fill="#1E1008"/>
+<rect x="114" y="318" width="9" height="28" rx="3" fill="#1E1008"/>
+<!-- Green visor -->
+<path d="M 49,316 Q 85,303 121,316 L 123,331 Q 85,317 47,331 Z" fill="#2A8B2A"/>
+<path d="M 50,329 Q 85,318 120,329 L 120,335 Q 85,324 50,335 Z" fill="#1E6B1E"/>
+
+<!-- Eyes: SAD / DEFEATED (drooping, downcast) -->
+<ellipse cx="74" cy="344" rx="5" ry="4" fill="#1A1014"/>
+<ellipse cx="96" cy="344" rx="5" ry="4" fill="#1A1014"/>
+<!-- Under-eye bags (frustrated) -->
+<path d="M 70,348 Q 74,351 78,348" stroke="#90504030" stroke-width="1.5" fill="none"/>
+<path d="M 92,348 Q 96,351 100,348" stroke="#90504030" stroke-width="1.5" fill="none"/>
+<!-- Brows: inner DOWN, outer UP (frustrated sadness) -->
+<path d="M 68,336 Q 74,333 80,337" stroke="#1E1008" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+<path d="M 90,337 Q 96,333 102,336" stroke="#1E1008" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+<!-- Brow crease lines (frustration) -->
+<line x1="82" y1="334" x2="84" y2="339" stroke="#1E1008" stroke-width="1.5" opacity="0.5"/>
+<line x1="88" y1="334" x2="86" y2="339" stroke="#1E1008" stroke-width="1.5" opacity="0.5"/>
+<!-- Mouth: downward frown -->
+<path d="M 76,358 Q 85,352 94,358" stroke="#7A4A3A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+<!-- Speech bubble from dealer (bitter, defeated tone) -->
+<polygon points="121,312 135,305 135,320" fill="#F5F0E4"/>
+<rect x="136" y="280" width="186" height="100" rx="10" fill="#F5F0E4"/>
+<rect x="138" y="282" width="182" height="96" rx="9" fill="none" stroke="#D4C8A0" stroke-width="0.8"/>
+<text x="229" y="305" font-family="Georgia,serif" font-size="12" fill="#3A1C10" text-anchor="middle" font-style="italic">"Fine. You got lucky.</text>
+<text x="229" y="323" font-family="Georgia,serif" font-size="12" fill="#3A1C10" text-anchor="middle" font-style="italic">The wheel won't be</text>
+<text x="229" y="341" font-family="Georgia,serif" font-size="12" fill="#3A1C10" text-anchor="middle" font-style="italic">so generous next time.</text>
+<text x="229" y="359" font-family="Georgia,serif" font-size="12" fill="#3A1C10" text-anchor="middle" font-style="italic">Mark my words."</text>
+<text x="310" y="373" font-family="Georgia,serif" font-size="10" fill="#A09060" text-anchor="end" font-style="italic">— The Dealer</text>
+
+<!-- ===== WIN BREAKDOWN CARD (right column) ===== -->
+<rect x="216" y="278" width="216" height="222" fill="#101A10"/>
+<rect x="216" y="278" width="216" height="222" fill="none" stroke="#2A5A2A" stroke-width="1"/>
+<rect x="216" y="278" width="216" height="4" rx="0" fill="#4AAA4A40"/>
+
+<text x="324" y="302" font-family="sans-serif" font-size="10" fill="#A09878" text-anchor="middle" letter-spacing="2">WIN BREAKDOWN</text>
+<line x1="230" y1="308" x2="418" y2="308" stroke="#2A5A2A" stroke-width="1"/>
+
+<!-- Bet details -->
+<text x="230" y="328" font-family="sans-serif" font-size="11" fill="#A09878">Straight 17 (35:1)</text>
+<text x="418" y="328" font-family="Georgia,serif" font-size="13" fill="#F0E6D0" text-anchor="end">+ ♦ 875</text>
+
+<text x="230" y="348" font-family="sans-serif" font-size="11" fill="#A09878">Red Bet (1:1)</text>
+<text x="418" y="348" font-family="Georgia,serif" font-size="13" fill="#F0E6D0" text-anchor="end">+ ♦ 10</text>
+
+<text x="230" y="368" font-family="sans-serif" font-size="11" fill="#706050">Straight 25 (lost)</text>
+<text x="418" y="368" font-family="Georgia,serif" font-size="13" fill="#9E3030" text-anchor="end">– ♦ 25</text>
+
+<line x1="230" y1="380" x2="418" y2="380" stroke="#2A5A2A" stroke-width="1"/>
+<text x="230" y="398" font-family="Georgia,serif" font-size="14" fill="#F0E6D0">Net Win</text>
+<text x="418" y="398" font-family="Georgia,serif" font-size="16" font-weight="bold" fill="#4AAA4A" text-anchor="end">+ ♦ 860</text>
+
+<line x1="230" y1="410" x2="418" y2="410" stroke="#2A5A2A40" stroke-width="1"/>
+<text x="230" y="428" font-family="sans-serif" font-size="11" fill="#A09878">Score Gained</text>
+<text x="418" y="428" font-family="Georgia,serif" font-size="13" fill="#E6BF33" text-anchor="end">+ 92 pts</text>
+
+<text x="230" y="448" font-family="sans-serif" font-size="11" fill="#A09878">New Total Chips</text>
+<text x="418" y="448" font-family="Georgia,serif" font-size="14" font-weight="bold" fill="#E6BF33" text-anchor="end">♦ 235</text>
+
+<text x="230" y="468" font-family="sans-serif" font-size="11" fill="#A09878">Score Progress</text>
+<text x="418" y="468" font-family="Georgia,serif" font-size="13" fill="#4AAA4A" text-anchor="end">248 / 400</text>
+
+<!-- ===== SCORE PROGRESS BAR (big) ===== -->
+<rect x="16" y="514" width="400" height="32" rx="6" fill="#0E180E"/>
+<rect x="16" y="514" width="400" height="32" rx="6" fill="none" stroke="#2A5A2A" stroke-width="1"/>
+<rect x="18" y="516" width="246" height="28" rx="5" fill="#2A6A2A"/>
+<rect x="18" y="516" width="246" height="28" rx="5" fill="none" stroke="#4AAA4A50" stroke-width="1"/>
+<text x="216" y="535" font-family="Georgia,serif" font-size="13" fill="#F0E6D0" text-anchor="middle">248 pts of 400 target — 62%</text>
+<text x="380" y="527" font-family="sans-serif" font-size="9" fill="#4AAA4A90">TARGET</text>
+<line x1="416" y1="514" x2="416" y2="546" stroke="#E6BF3360" stroke-width="1.5"/>
+
+<!-- ===== NEXT BET BUTTON ===== -->
+<rect x="16" y="560" width="400" height="62" rx="8" fill="#E6BF33"/>
+<rect x="18" y="562" width="396" height="58" rx="7" fill="none" stroke="#F0D86050" stroke-width="1.5"/>
+<text x="216" y="599" font-family="Georgia,serif" font-size="22" font-weight="bold" fill="#080604" text-anchor="middle" letter-spacing="4">NEXT BET →</text>
+
+<!-- ===== LORE STRIP ===== -->
+<rect x="0" y="636" width="432" height="30" fill="#0E1A0E"/>
+<rect x="0" y="636" width="432" height="1" fill="#2A5A2A"/>
+<text x="216" y="656" font-family="Georgia,serif" font-size="11" fill="#4AAA4A" text-anchor="middle" font-style="italic">"Colour me impressed. A fine choice."</text>
+
+<!-- MOD TRIGGER NOTIFICATION (floating) -->
+<rect x="80" y="670" width="272" height="36" rx="6" fill="#1A2A1A"/>
+<rect x="80" y="670" width="272" height="36" rx="6" fill="none" stroke="#E6BF3340" stroke-width="1"/>
+<text x="216" y="692" font-family="sans-serif" font-size="11" fill="#E6BF33" text-anchor="middle">★ Straight Razor triggered: Score ×2!</text>
+
+<!-- Spins remaining -->
+<text x="216" y="736" font-family="sans-serif" font-size="11" fill="#A09878" text-anchor="middle">2 spins remaining  ·  152 pts still needed</text>
+
+<rect x="0" y="764" width="432" height="4" fill="#E6BF3828"/>
+</svg>

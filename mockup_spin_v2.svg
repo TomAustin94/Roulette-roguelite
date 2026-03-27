@@ -1,0 +1,196 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="432" height="768" viewBox="0 0 432 768" style="background:#0D120D">
+<defs>
+<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+<path d="M40,0 L0,0 0,40" fill="none" stroke="#ffffff06" stroke-width="0.5"/>
+</pattern>
+<radialGradient id="wheelGlow" cx="50%" cy="50%" r="50%">
+<stop offset="0%" stop-color="#E6BF3318"/>
+<stop offset="100%" stop-color="transparent"/>
+</radialGradient>
+</defs>
+<rect width="432" height="768" fill="url(#grid)"/>
+<rect x="0" y="0" width="432" height="3" fill="#E6BF33"/>
+
+<!-- ===== HUD ===== -->
+<rect x="0" y="3" width="432" height="80" fill="#0A140A"/>
+<rect x="0" y="83" width="432" height="1" fill="#E6BF3828"/>
+
+<text x="16" y="24" font-family="sans-serif" font-size="10" fill="#A09878" letter-spacing="2">FLOOR 1</text>
+<text x="16" y="46" font-family="Georgia,serif" font-size="20" font-weight="bold" fill="#E6BF33">The Velvet Room</text>
+<text x="16" y="63" font-family="sans-serif" font-size="11" fill="#A09878">Round 1 / 3  ·  Spin 3 / 5</text>
+<text x="416" y="26" font-family="sans-serif" font-size="10" fill="#A09878" text-anchor="end">CHIPS</text>
+<text x="416" y="50" font-family="Georgia,serif" font-size="24" font-weight="bold" fill="#E6BF33" text-anchor="end">♦ 160</text>
+
+<!-- Score bar -->
+<rect x="16" y="68" width="400" height="5" rx="2" fill="#1A2A1A"/>
+<rect x="16" y="68" width="156" height="5" rx="2" fill="#E6BF33"/>
+<text x="16" y="80" font-family="sans-serif" font-size="9" fill="#706050">156 / 400 pts</text>
+
+<!-- ===== SPINNING STATUS BANNER ===== -->
+<rect x="0" y="84" width="432" height="32" fill="#1A0A04"/>
+<rect x="0" y="84" width="432" height="32" fill="none" stroke="#E6BF3820" stroke-width="0"/>
+<!-- Pulsing indicator dots -->
+<circle cx="120" cy="100" r="5" fill="#E6BF33" opacity="1.0"/>
+<circle cx="140" cy="100" r="5" fill="#E6BF33" opacity="0.7"/>
+<circle cx="160" cy="100" r="5" fill="#E6BF33" opacity="0.4"/>
+<text x="216" y="104" font-family="Georgia,serif" font-size="14" fill="#E6BF33" text-anchor="middle" letter-spacing="6">SPINNING...</text>
+<circle cx="272" cy="100" r="5" fill="#E6BF33" opacity="0.4"/>
+<circle cx="292" cy="100" r="5" fill="#E6BF33" opacity="0.7"/>
+<circle cx="312" cy="100" r="5" fill="#E6BF33" opacity="1.0"/>
+
+<!-- ===== LARGE WHEEL (r=155, center=(216,290)) ===== -->
+<!-- Outer glow (dramatic for spin state) -->
+<circle cx="216" cy="290" r="175" fill="none" stroke="#E6BF3316" stroke-width="14"/>
+<circle cx="216" cy="290" r="167" fill="none" stroke="#E6BF3822" stroke-width="8"/>
+<circle cx="216" cy="290" r="161" fill="#160C04"/>
+<circle cx="216" cy="290" r="160" fill="none" stroke="#8C6318" stroke-width="6"/>
+<circle cx="216" cy="290" r="154" fill="none" stroke="#5A3E10" stroke-width="2"/>
+<circle cx="216" cy="290" r="155" fill="url(#wheelGlow)"/>
+
+<!-- Wheel sectors (r=155, center=(216,290))
+     P0=(216,135) P1=(293.5,151) P2=(350,211) P3=(371,290)
+     P4=(350,369) P5=(293.5,429) P6=(216,445) P7=(138.5,429)
+     P8=(82,369) P9=(61,290) P10=(82,211) P11=(138.5,151) -->
+<path d="M216,290 L216,135 A155,155 0 0,1 293,151 Z" fill="#0A6615"/>
+<path d="M216,290 L293,151 A155,155 0 0,1 349,211 Z" fill="#9E1010"/>
+<path d="M216,290 L349,211 A155,155 0 0,1 371,290 Z" fill="#1A1A1A"/>
+<path d="M216,290 L371,290 A155,155 0 0,1 349,369 Z" fill="#9E1010"/>
+<path d="M216,290 L349,369 A155,155 0 0,1 293,429 Z" fill="#1A1A1A"/>
+<path d="M216,290 L293,429 A155,155 0 0,1 216,445 Z" fill="#9E1010"/>
+<path d="M216,290 L216,445 A155,155 0 0,1 139,429 Z" fill="#1A1A1A"/>
+<path d="M216,290 L139,429 A155,155 0 0,1 83,369 Z" fill="#9E1010"/>
+<path d="M216,290 L83,369 A155,155 0 0,1 61,290 Z" fill="#1A1A1A"/>
+<path d="M216,290 L61,290 A155,155 0 0,1 83,211 Z" fill="#9E1010"/>
+<path d="M216,290 L83,211 A155,155 0 0,1 139,151 Z" fill="#1A1A1A"/>
+<path d="M216,290 L139,151 A155,155 0 0,1 216,135 Z" fill="#9E1010"/>
+
+<!-- Sector dividers -->
+<line x1="216" y1="290" x2="216" y2="135" stroke="#3A2808" stroke-width="1.2"/>
+<line x1="216" y1="290" x2="293" y2="151" stroke="#3A2808" stroke-width="1.2"/>
+<line x1="216" y1="290" x2="349" y2="211" stroke="#3A2808" stroke-width="1.2"/>
+<line x1="216" y1="290" x2="371" y2="290" stroke="#3A2808" stroke-width="1.2"/>
+<line x1="216" y1="290" x2="349" y2="369" stroke="#3A2808" stroke-width="1.2"/>
+<line x1="216" y1="290" x2="293" y2="429" stroke="#3A2808" stroke-width="1.2"/>
+<line x1="216" y1="290" x2="216" y2="445" stroke="#3A2808" stroke-width="1.2"/>
+<line x1="216" y1="290" x2="139" y2="429" stroke="#3A2808" stroke-width="1.2"/>
+<line x1="216" y1="290" x2="83" y2="369" stroke="#3A2808" stroke-width="1.2"/>
+<line x1="216" y1="290" x2="61" y2="290" stroke="#3A2808" stroke-width="1.2"/>
+<line x1="216" y1="290" x2="83" y2="211" stroke="#3A2808" stroke-width="1.2"/>
+<line x1="216" y1="290" x2="139" y2="151" stroke="#3A2808" stroke-width="1.2"/>
+
+<!-- Number labels on outer rim (selected) -->
+<text x="228" y="148" font-family="sans-serif" font-size="10" fill="#F0E6D080" text-anchor="middle" transform="rotate(15,216,290)">17</text>
+<text x="358" y="250" font-family="sans-serif" font-size="10" fill="#F0E6D080" text-anchor="middle" transform="rotate(60,216,290)">32</text>
+
+<!-- Inner hub -->
+<circle cx="216" cy="290" r="62" fill="#0D0807"/>
+<circle cx="216" cy="290" r="60" fill="none" stroke="#5A3E10" stroke-width="2"/>
+<!-- Hub spokes -->
+<line x1="216" y1="230" x2="216" y2="350" stroke="#8C6318" stroke-width="2.5" opacity="0.7"/>
+<line x1="156" y1="290" x2="276" y2="290" stroke="#8C6318" stroke-width="2.5" opacity="0.7"/>
+<line x1="173" y1="247" x2="259" y2="333" stroke="#8C6318" stroke-width="1.8" opacity="0.5"/>
+<line x1="173" y1="333" x2="259" y2="247" stroke="#8C6318" stroke-width="1.8" opacity="0.5"/>
+<!-- Hub center -->
+<circle cx="216" cy="290" r="22" fill="#8C6318"/>
+<circle cx="216" cy="290" r="17" fill="#5A3E10"/>
+<circle cx="216" cy="290" r="8" fill="#E6BF33"/>
+
+<!-- BALL — shown mid-spin, slightly off-center to suggest motion -->
+<!-- Ball trail (motion blur effect) -->
+<circle cx="238" cy="138" r="6" fill="#F0F0F080"/>
+<circle cx="226" cy="137" r="5" fill="#F0F0F0B0"/>
+<!-- Current ball position -->
+<circle cx="216" cy="137" r="8" fill="#F0F0F0"/>
+<circle cx="216" cy="137" r="6" fill="#E8E8E8"/>
+<circle cx="214" cy="135" r="2.5" fill="#FFFFFF60"/>
+
+<!-- Ball track ring (shows ball channel) -->
+<circle cx="216" cy="290" r="149" fill="none" stroke="#FFFFFF08" stroke-width="3"/>
+
+<!-- Pointer triangle (gold) -->
+<polygon points="216,126 222,140 210,140" fill="#E6BF33"/>
+
+<!-- ===== TENSE DEALER (bottom-left corner) ===== -->
+<!-- Mini dealer in corner -->
+<rect x="8" y="454" width="128" height="110" rx="8" fill="#0A100A" opacity="0.92"/>
+<rect x="8" y="454" width="128" height="110" rx="8" fill="none" stroke="#E6BF3820" stroke-width="1"/>
+
+<!-- Dealer body (tiny) -->
+<rect x="48" y="510" width="48" height="54" rx="5" fill="#1C0B32"/>
+<!-- Lapels -->
+<polygon points="72,514 62,528 72,534 82,528" fill="#F0EAD8" opacity="0.9"/>
+<!-- Bow tie -->
+<polygon points="68,525 72,530 76,525 72,520" fill="#9E1010"/>
+<!-- Head -->
+<ellipse cx="72" cy="494" rx="20" ry="22" fill="#C49060"/>
+<!-- Hair -->
+<path d="M 52,486 Q 55,472 72,470 Q 89,472 92,486 Q 88,477 72,475 Q 56,477 52,486 Z" fill="#1E1008"/>
+<!-- Green visor -->
+<path d="M 54,483 Q 72,476 90,483 L 91,492 Q 72,484 53,492 Z" fill="#2A8B2A"/>
+<path d="M 54,491 Q 72,484 90,491 L 90,495 Q 72,488 54,495 Z" fill="#1E6B1E"/>
+
+<!-- Eyes — TENSE (wide, worried) -->
+<ellipse cx="65" cy="499" rx="4" ry="5" fill="#1A1014"/>
+<ellipse cx="79" cy="499" rx="4" ry="5" fill="#1A1014"/>
+<!-- Eye highlight (wide open) -->
+<ellipse cx="64" cy="497" rx="2" ry="1.5" fill="#FFFFFF50"/>
+<ellipse cx="78" cy="497" rx="2" ry="1.5" fill="#FFFFFF50"/>
+<!-- Brows (raised in worry — both inner corners UP) -->
+<path d="M 60,491 Q 65,486 70,490" stroke="#1E1008" stroke-width="2" fill="none" stroke-linecap="round"/>
+<path d="M 74,490 Q 79,486 84,491" stroke="#1E1008" stroke-width="2" fill="none" stroke-linecap="round"/>
+<!-- Mouth (O shape — nervous) -->
+<ellipse cx="72" cy="511" rx="4.5" ry="4" fill="#2A1010"/>
+
+<!-- Speech bubble from dealer (tense) -->
+<polygon points="94,486 107,480 107,493" fill="#F5F0E4"/>
+<rect x="107" y="466" width="110" height="50" rx="6" fill="#F5F0E4"/>
+<rect x="109" y="468" width="106" height="46" rx="5" fill="none" stroke="#D4C8A0" stroke-width="0.8"/>
+<text x="162" y="483" font-family="Georgia,serif" font-size="10" fill="#2A1C10" text-anchor="middle" font-style="italic">No bet, no mercy.</text>
+<text x="162" y="498" font-family="Georgia,serif" font-size="10" fill="#2A1C10" text-anchor="middle" font-style="italic">The wheel decides</text>
+<text x="162" y="513" font-family="Georgia,serif" font-size="10" fill="#2A1C10" text-anchor="middle" font-style="italic">everything.</text>
+
+<!-- ===== CURRENT BETS SUMMARY (bottom panel) ===== -->
+<rect x="0" y="566" width="432" height="80" fill="#101A10"/>
+<rect x="0" y="566" width="432" height="1" fill="#1E3A1E"/>
+
+<text x="16" y="584" font-family="sans-serif" font-size="9" fill="#A09878" letter-spacing="2">BETS PLACED</text>
+
+<!-- Bet row 1: Straight 17 -->
+<rect x="16" y="590" width="190" height="22" rx="3" fill="#1A2A1A"/>
+<text x="24" y="606" font-family="sans-serif" font-size="10" fill="#C0B090">Straight — 17 RED</text>
+<text x="198" y="606" font-family="sans-serif" font-size="10" fill="#E6BF33" text-anchor="end">♦ 25</text>
+
+<!-- Bet row 2: Red -->
+<rect x="16" y="614" width="190" height="22" rx="3" fill="#1A2A1A"/>
+<text x="24" y="630" font-family="sans-serif" font-size="10" fill="#C0B090">Red / Even Chance</text>
+<text x="198" y="630" font-family="sans-serif" font-size="10" fill="#E6BF33" text-anchor="end">♦ 10</text>
+
+<!-- Bet row 3: Straight 25 -->
+<rect x="222" y="590" width="194" height="22" rx="3" fill="#1A2A1A"/>
+<text x="230" y="606" font-family="sans-serif" font-size="10" fill="#C0B090">Straight — 25 RED</text>
+<text x="408" y="606" font-family="sans-serif" font-size="10" fill="#E6BF33" text-anchor="end">♦ 25</text>
+
+<!-- Total bets -->
+<rect x="222" y="614" width="194" height="22" rx="3" fill="#1E2E1E"/>
+<text x="230" y="630" font-family="sans-serif" font-size="10" fill="#E6BF33" font-weight="bold">TOTAL BET</text>
+<text x="408" y="630" font-family="Georgia,serif" font-size="11" fill="#E6BF33" text-anchor="end" font-weight="bold">♦ 60</text>
+
+<!-- ===== GRAYED ACTION BAR (disabled during spin) ===== -->
+<rect x="0" y="646" width="432" height="60" fill="#080D08"/>
+<rect x="0" y="646" width="432" height="1" fill="#1E3A1E"/>
+
+<!-- Disabled Clear -->
+<rect x="12" y="656" width="118" height="40" rx="6" fill="#141414" opacity="0.6"/>
+<text x="71" y="681" font-family="Georgia,serif" font-size="14" fill="#404040" text-anchor="middle">✕ CLEAR</text>
+
+<!-- Disabled SPIN (greyed out) -->
+<rect x="142" y="652" width="278" height="48" rx="8" fill="#2A2010" opacity="0.6"/>
+<text x="281" y="682" font-family="Georgia,serif" font-size="18" fill="#6A5A20" text-anchor="middle" letter-spacing="4">SPINNING...</text>
+
+<!-- ===== LORE STRIP ===== -->
+<rect x="0" y="706" width="432" height="28" fill="#0A0A0A"/>
+<rect x="0" y="706" width="432" height="1" fill="#1E3A1E"/>
+<text x="216" y="724" font-family="Georgia,serif" font-size="11" fill="#A09878" text-anchor="middle" font-style="italic">"Hold your breath. The wheel never rushes."</text>
+
+<rect x="0" y="764" width="432" height="4" fill="#E6BF3828"/>
+</svg>

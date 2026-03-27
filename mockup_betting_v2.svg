@@ -1,0 +1,274 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="432" height="768" viewBox="0 0 432 768" style="background:#0D120D">
+<defs>
+<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+<path d="M40,0 L0,0 0,40" fill="none" stroke="#ffffff06" stroke-width="0.5"/>
+</pattern>
+</defs>
+<rect width="432" height="768" fill="url(#grid)"/>
+<rect x="0" y="0" width="432" height="3" fill="#E6BF33"/>
+
+<!-- ===== HUD — improved layout ===== -->
+<rect x="0" y="3" width="432" height="96" fill="#0A140A"/>
+<rect x="0" y="99" width="432" height="1" fill="#E6BF3828"/>
+
+<!-- Floor name (prominent) -->
+<text x="16" y="24" font-family="sans-serif" font-size="10" fill="#A09878" letter-spacing="2">FLOOR 1</text>
+<text x="16" y="46" font-family="Georgia,serif" font-size="20" font-weight="bold" fill="#E6BF33">The Velvet Room</text>
+<text x="16" y="63" font-family="sans-serif" font-size="11" fill="#A09878">Round 1 / 3  ·  Spin 3 / 5</text>
+
+<!-- Chips display (top right) -->
+<text x="416" y="26" font-family="sans-serif" font-size="10" fill="#A09878" text-anchor="end">CHIPS</text>
+<text x="416" y="50" font-family="Georgia,serif" font-size="24" font-weight="bold" fill="#E6BF33" text-anchor="end">♦ 185</text>
+
+<!-- Score progress bar -->
+<rect x="16" y="70" width="400" height="6" rx="3" fill="#1A2A1A"/>
+<rect x="16" y="70" width="156" height="6" rx="3" fill="#E6BF33"/>
+<!-- Score progress overlay glow -->
+<rect x="16" y="70" width="156" height="6" rx="3" fill="none" stroke="#E6BF3340" stroke-width="1"/>
+<text x="16" y="88" font-family="sans-serif" font-size="10" fill="#706050">156 / 400 pts</text>
+<text x="416" y="88" font-family="sans-serif" font-size="10" fill="#706050" text-anchor="end">39%</text>
+
+<!-- ===== GAME AREA (wheel + dealer side by side) ===== -->
+<rect x="0" y="100" width="432" height="186" fill="#0C180C"/>
+<rect x="0" y="286" width="432" height="1" fill="#1E3A1E"/>
+
+<!-- == SMALL WHEEL (left side, r=82, center=(112,190)) == -->
+<!-- Outer glow -->
+<circle cx="112" cy="190" r="90" fill="none" stroke="#E6BF3810" stroke-width="8"/>
+<circle cx="112" cy="190" r="85" fill="#160C04"/>
+<circle cx="112" cy="190" r="84" fill="none" stroke="#8C6318" stroke-width="4"/>
+<circle cx="112" cy="190" r="79" fill="none" stroke="#5A3E10" stroke-width="1.5"/>
+
+<!-- Wheel sectors (r=82): P0=(112,108) P1=(153,119) P2=(183,149) P3=(194,190)
+     P4=(183,231) P5=(153,261) P6=(112,272) P7=(71,261) P8=(41,231)
+     P9=(30,190) P10=(41,149) P11=(71,119) -->
+<path d="M112,190 L112,108 A82,82 0 0,1 153,119 Z" fill="#0A6615"/>
+<path d="M112,190 L153,119 A82,82 0 0,1 183,149 Z" fill="#9E1010"/>
+<path d="M112,190 L183,149 A82,82 0 0,1 194,190 Z" fill="#1A1A1A"/>
+<path d="M112,190 L194,190 A82,82 0 0,1 183,231 Z" fill="#9E1010"/>
+<path d="M112,190 L183,231 A82,82 0 0,1 153,261 Z" fill="#1A1A1A"/>
+<path d="M112,190 L153,261 A82,82 0 0,1 112,272 Z" fill="#9E1010"/>
+<path d="M112,190 L112,272 A82,82 0 0,1 71,261 Z" fill="#1A1A1A"/>
+<path d="M112,190 L71,261 A82,82 0 0,1 41,231 Z" fill="#9E1010"/>
+<path d="M112,190 L41,231 A82,82 0 0,1 30,190 Z" fill="#1A1A1A"/>
+<path d="M112,190 L30,190 A82,82 0 0,1 41,149 Z" fill="#9E1010"/>
+<path d="M112,190 L41,149 A82,82 0 0,1 71,119 Z" fill="#1A1A1A"/>
+<path d="M112,190 L71,119 A82,82 0 0,1 112,108 Z" fill="#9E1010"/>
+
+<!-- Sector dividers (small wheel) -->
+<line x1="112" y1="190" x2="112" y2="108" stroke="#3A2808" stroke-width="0.8"/>
+<line x1="112" y1="190" x2="153" y2="119" stroke="#3A2808" stroke-width="0.8"/>
+<line x1="112" y1="190" x2="183" y2="149" stroke="#3A2808" stroke-width="0.8"/>
+<line x1="112" y1="190" x2="194" y2="190" stroke="#3A2808" stroke-width="0.8"/>
+<line x1="112" y1="190" x2="183" y2="231" stroke="#3A2808" stroke-width="0.8"/>
+<line x1="112" y1="190" x2="153" y2="261" stroke="#3A2808" stroke-width="0.8"/>
+<line x1="112" y1="190" x2="112" y2="272" stroke="#3A2808" stroke-width="0.8"/>
+<line x1="112" y1="190" x2="71" y2="261" stroke="#3A2808" stroke-width="0.8"/>
+<line x1="112" y1="190" x2="41" y2="231" stroke="#3A2808" stroke-width="0.8"/>
+<line x1="112" y1="190" x2="30" y2="190" stroke="#3A2808" stroke-width="0.8"/>
+<line x1="112" y1="190" x2="41" y2="149" stroke="#3A2808" stroke-width="0.8"/>
+<line x1="112" y1="190" x2="71" y2="119" stroke="#3A2808" stroke-width="0.8"/>
+
+<!-- Inner hub (small wheel) -->
+<circle cx="112" cy="190" r="32" fill="#0D0807"/>
+<circle cx="112" cy="190" r="30" fill="none" stroke="#5A3E10" stroke-width="1.5"/>
+<line x1="112" y1="160" x2="112" y2="220" stroke="#8C6318" stroke-width="1.5" opacity="0.6"/>
+<line x1="82" y1="190" x2="142" y2="190" stroke="#8C6318" stroke-width="1.5" opacity="0.6"/>
+<circle cx="112" cy="190" r="9" fill="#8C6318"/>
+<circle cx="112" cy="190" r="6" fill="#5A3E10"/>
+<circle cx="112" cy="190" r="3" fill="#E6BF33"/>
+<!-- Ball -->
+<circle cx="112" cy="113" r="5" fill="#F0F0F0"/>
+<polygon points="112,108 116,115 108,115" fill="#E6BF33"/>
+
+<!-- Vertical divider between wheel and dealer -->
+<line x1="218" y1="108" x2="218" y2="280" stroke="#1E3A1E" stroke-width="1"/>
+
+<!-- == DEALER (right side, small) == -->
+<!-- Dealer body -->
+<rect x="248" y="178" width="72" height="98" rx="8" fill="#1C0B32"/>
+<!-- Lapels -->
+<polygon points="284,184 270,205 284,216 298,205" fill="#F0EAD8" opacity="0.9"/>
+<!-- Bow tie -->
+<polygon points="279,202 284,208 289,202 284,196" fill="#9E1010"/>
+<!-- Head -->
+<ellipse cx="284" cy="157" rx="28" ry="31" fill="#C49060"/>
+<!-- Hair -->
+<path d="M 256,148 Q 259,127 284,124 Q 309,127 312,148 Q 306,135 284,132 Q 262,135 256,148 Z" fill="#1E1008"/>
+<!-- Green visor -->
+<path d="M 260,147 Q 284,138 308,147 L 310,158 Q 284,148 258,158 Z" fill="#2A8B2A"/>
+<path d="M 261,156 Q 284,148 307,156 L 307,161 Q 284,154 261,161 Z" fill="#1E6B1E"/>
+<!-- Eyes (idle) -->
+<ellipse cx="276" cy="163" rx="3.5" ry="4" fill="#1A1014"/>
+<ellipse cx="292" cy="163" rx="3.5" ry="4" fill="#1A1014"/>
+<!-- Brows -->
+<path d="M 272,157 Q 276,154 280,157" stroke="#1E1008" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+<path d="M 288,157 Q 292,154 296,157" stroke="#1E1008" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+<!-- Mouth (slight smile) -->
+<path d="M 278,174 Q 284,179 290,174" stroke="#7A4A3A" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+<!-- Speech bubble (from dealer) -->
+<polygon points="308,156 320,165 320,152" fill="#F5F0E4"/>
+<rect x="320" y="116" width="102" height="68" rx="8" fill="#F5F0E4"/>
+<rect x="322" y="118" width="98" height="64" rx="7" fill="none" stroke="#D4C8A0" stroke-width="0.8"/>
+<text x="371" y="137" font-family="Georgia,serif" font-size="10" fill="#2A1C10" text-anchor="middle" font-style="italic">Place your bets.</text>
+<text x="371" y="153" font-family="Georgia,serif" font-size="10" fill="#2A1C10" text-anchor="middle" font-style="italic">Fortune favours</text>
+<text x="371" y="169" font-family="Georgia,serif" font-size="10" fill="#2A1C10" text-anchor="middle" font-style="italic">the bold.</text>
+
+<!-- Active bet indicator on wheel -->
+<text x="112" y="296" font-family="sans-serif" font-size="9" fill="#E6BF33" text-anchor="middle">BET ON: 17 RED</text>
+<rect x="58" y="286" width="108" height="14" rx="3" fill="#E6BF3318"/>
+
+<!-- ===== BETTING TABLE ===== -->
+<rect x="0" y="302" width="432" height="1" fill="#1E3A1E"/>
+<!-- Table felt background -->
+<rect x="0" y="303" width="432" height="282" fill="#102010"/>
+
+<!-- ZERO ROW -->
+<rect x="8" y="308" width="416" height="34" rx="3" fill="#0A6615"/>
+<rect x="8" y="308" width="416" height="34" rx="3" fill="none" stroke="#1E8A1E" stroke-width="1"/>
+<text x="216" y="330" font-family="Georgia,serif" font-size="16" font-weight="bold" fill="#F0E6D0" text-anchor="middle">0</text>
+
+<!-- NUMBER GRID — 3 rows × 12 cols -->
+<!-- Row 1: 3,6,9,12,15,18,21,24,27,30,33,36 -->
+<!-- Col x positions: 8,43,78,113,148,183,218,253,288,323,358,393 (each 35px wide) -->
+<!-- Row y: 346-382 (h=36) -->
+<rect x="8"   y="346" width="33" height="36" rx="2" fill="#9E1010"/><text x="24"  y="369" font-family="sans-serif" font-size="12" fill="#F0E6D0" text-anchor="middle">3</text>
+<rect x="43"  y="346" width="33" height="36" rx="2" fill="#1A1A1A"/><text x="59"  y="369" font-family="sans-serif" font-size="12" fill="#F0E6D0" text-anchor="middle">6</text>
+<rect x="78"  y="346" width="33" height="36" rx="2" fill="#9E1010"/><text x="94"  y="369" font-family="sans-serif" font-size="12" fill="#F0E6D0" text-anchor="middle">9</text>
+<rect x="113" y="346" width="33" height="36" rx="2" fill="#9E1010"/><text x="129" y="369" font-family="sans-serif" font-size="12" fill="#F0E6D0" text-anchor="middle">12</text>
+<rect x="148" y="346" width="33" height="36" rx="2" fill="#1A1A1A"/><text x="164" y="369" font-family="sans-serif" font-size="12" fill="#F0E6D0" text-anchor="middle">15</text>
+<rect x="183" y="346" width="33" height="36" rx="2" fill="#9E1010"/><text x="199" y="369" font-family="sans-serif" font-size="12" fill="#F0E6D0" text-anchor="middle">18</text>
+<rect x="218" y="346" width="33" height="36" rx="2" fill="#9E1010"/><text x="234" y="369" font-family="sans-serif" font-size="12" fill="#F0E6D0" text-anchor="middle">21</text>
+<rect x="253" y="346" width="33" height="36" rx="2" fill="#1A1A1A"/><text x="269" y="369" font-family="sans-serif" font-size="12" fill="#F0E6D0" text-anchor="middle">24</text>
+<rect x="288" y="346" width="33" height="36" rx="2" fill="#9E1010"/><text x="304" y="369" font-family="sans-serif" font-size="12" fill="#F0E6D0" text-anchor="middle">27</text>
+<rect x="323" y="346" width="33" height="36" rx="2" fill="#9E1010"/><text x="339" y="369" font-family="sans-serif" font-size="12" fill="#F0E6D0" text-anchor="middle">30</text>
+<rect x="358" y="346" width="33" height="36" rx="2" fill="#1A1A1A"/><text x="374" y="369" font-family="sans-serif" font-size="12" fill="#F0E6D0" text-anchor="middle">33</text>
+<rect x="393" y="346" width="31" height="36" rx="2" fill="#9E1010"/><text x="408" y="369" font-family="sans-serif" font-size="12" fill="#F0E6D0" text-anchor="middle">36</text>
+
+<!-- Row 2: 2,5,8,11,14,17,20,23,26,29,32,35 (y=383-419) -->
+<rect x="8"   y="383" width="33" height="36" rx="2" fill="#1A1A1A"/><text x="24"  y="406" font-family="sans-serif" font-size="12" fill="#F0E6D0" text-anchor="middle">2</text>
+<rect x="43"  y="383" width="33" height="36" rx="2" fill="#9E1010"/><text x="59"  y="406" font-family="sans-serif" font-size="12" fill="#F0E6D0" text-anchor="middle">5</text>
+<rect x="78"  y="383" width="33" height="36" rx="2" fill="#1A1A1A"/><text x="94"  y="406" font-family="sans-serif" font-size="12" fill="#F0E6D0" text-anchor="middle">8</text>
+<rect x="113" y="383" width="33" height="36" rx="2" fill="#1A1A1A"/><text x="129" y="406" font-family="sans-serif" font-size="12" fill="#F0E6D0" text-anchor="middle">11</text>
+<!-- 17: highlighted bet (active) -->
+<rect x="148" y="383" width="33" height="36" rx="2" fill="#9E1010"/>
+<rect x="148" y="383" width="33" height="36" rx="2" fill="none" stroke="#E6BF33" stroke-width="2"/>
+<text x="164" y="406" font-family="sans-serif" font-size="12" fill="#E6BF33" text-anchor="middle" font-weight="bold">14</text>
+<rect x="183" y="383" width="33" height="36" rx="2" fill="#1A1A1A"/>
+<rect x="183" y="383" width="33" height="36" rx="2" fill="none" stroke="#E6BF33" stroke-width="2"/>
+<text x="199" y="406" font-family="sans-serif" font-size="12" fill="#E6BF33" text-anchor="middle" font-weight="bold">17</text>
+<!-- Chip placed on 17 -->
+<circle cx="199" cy="388" r="9" fill="#CC1414"/>
+<text x="199" y="391" font-family="sans-serif" font-size="7" fill="#FFFFFF" text-anchor="middle" font-weight="bold">25</text>
+<rect x="218" y="383" width="33" height="36" rx="2" fill="#1A1A1A"/><text x="234" y="406" font-family="sans-serif" font-size="12" fill="#F0E6D0" text-anchor="middle">20</text>
+<rect x="253" y="383" width="33" height="36" rx="2" fill="#9E1010"/><text x="269" y="406" font-family="sans-serif" font-size="12" fill="#F0E6D0" text-anchor="middle">23</text>
+<rect x="288" y="383" width="33" height="36" rx="2" fill="#1A1A1A"/><text x="304" y="406" font-family="sans-serif" font-size="12" fill="#F0E6D0" text-anchor="middle">26</text>
+<rect x="323" y="383" width="33" height="36" rx="2" fill="#1A1A1A"/><text x="339" y="406" font-family="sans-serif" font-size="12" fill="#F0E6D0" text-anchor="middle">29</text>
+<rect x="358" y="383" width="33" height="36" rx="2" fill="#9E1010"/><text x="374" y="406" font-family="sans-serif" font-size="12" fill="#F0E6D0" text-anchor="middle">32</text>
+<rect x="393" y="383" width="31" height="36" rx="2" fill="#1A1A1A"/><text x="408" y="406" font-family="sans-serif" font-size="12" fill="#F0E6D0" text-anchor="middle">35</text>
+
+<!-- Row 3: 1,4,7,10,13,16,19,22,25,28,31,34 (y=420-456) -->
+<rect x="8"   y="420" width="33" height="36" rx="2" fill="#9E1010"/><text x="24"  y="443" font-family="sans-serif" font-size="12" fill="#F0E6D0" text-anchor="middle">1</text>
+<rect x="43"  y="420" width="33" height="36" rx="2" fill="#1A1A1A"/><text x="59"  y="443" font-family="sans-serif" font-size="12" fill="#F0E6D0" text-anchor="middle">4</text>
+<rect x="78"  y="420" width="33" height="36" rx="2" fill="#9E1010"/><text x="94"  y="443" font-family="sans-serif" font-size="12" fill="#F0E6D0" text-anchor="middle">7</text>
+<rect x="113" y="420" width="33" height="36" rx="2" fill="#1A1A1A"/><text x="129" y="443" font-family="sans-serif" font-size="12" fill="#F0E6D0" text-anchor="middle">10</text>
+<rect x="148" y="420" width="33" height="36" rx="2" fill="#1A1A1A"/><text x="164" y="443" font-family="sans-serif" font-size="12" fill="#F0E6D0" text-anchor="middle">13</text>
+<rect x="183" y="420" width="33" height="36" rx="2" fill="#9E1010"/><text x="199" y="443" font-family="sans-serif" font-size="12" fill="#F0E6D0" text-anchor="middle">16</text>
+<rect x="218" y="420" width="33" height="36" rx="2" fill="#9E1010"/><text x="234" y="443" font-family="sans-serif" font-size="12" fill="#F0E6D0" text-anchor="middle">19</text>
+<rect x="253" y="420" width="33" height="36" rx="2" fill="#1A1A1A"/><text x="269" y="443" font-family="sans-serif" font-size="12" fill="#F0E6D0" text-anchor="middle">22</text>
+<!-- 25: chip placed (RED bet) -->
+<rect x="288" y="420" width="33" height="36" rx="2" fill="#9E1010"/>
+<rect x="288" y="420" width="33" height="36" rx="2" fill="none" stroke="#E6BF33" stroke-width="2"/>
+<text x="304" y="443" font-family="sans-serif" font-size="12" fill="#E6BF33" text-anchor="middle" font-weight="bold">25</text>
+<circle cx="304" cy="425" r="9" fill="#CC1414"/>
+<text x="304" y="428" font-family="sans-serif" font-size="7" fill="#FFFFFF" text-anchor="middle" font-weight="bold">25</text>
+<rect x="323" y="420" width="33" height="36" rx="2" fill="#1A1A1A"/><text x="339" y="443" font-family="sans-serif" font-size="12" fill="#F0E6D0" text-anchor="middle">28</text>
+<rect x="358" y="420" width="33" height="36" rx="2" fill="#1A1A1A"/><text x="374" y="443" font-family="sans-serif" font-size="12" fill="#F0E6D0" text-anchor="middle">31</text>
+<rect x="393" y="420" width="31" height="36" rx="2" fill="#9E1010"/><text x="408" y="443" font-family="sans-serif" font-size="12" fill="#F0E6D0" text-anchor="middle">34</text>
+
+<!-- DOZEN BETS (y=457-484) -->
+<rect x="8"   y="457" width="135" height="27" rx="2" fill="#1A2A1A"/><rect x="8"   y="457" width="135" height="27" rx="2" fill="none" stroke="#3A5A3A" stroke-width="1"/>
+<text x="75"  y="475" font-family="sans-serif" font-size="11" fill="#A09878" text-anchor="middle">1st 12</text>
+<rect x="145" y="457" width="135" height="27" rx="2" fill="#1A2A1A"/><rect x="145" y="457" width="135" height="27" rx="2" fill="none" stroke="#3A5A3A" stroke-width="1"/>
+<text x="212" y="475" font-family="sans-serif" font-size="11" fill="#A09878" text-anchor="middle">2nd 12</text>
+<rect x="282" y="457" width="142" height="27" rx="2" fill="#1A2A1A"/><rect x="282" y="457" width="142" height="27" rx="2" fill="none" stroke="#3A5A3A" stroke-width="1"/>
+<text x="353" y="475" font-family="sans-serif" font-size="11" fill="#A09878" text-anchor="middle">3rd 12</text>
+
+<!-- EVEN CHANCE BETS (y=485-522) -->
+<!-- 1-18 -->
+<rect x="8"   y="485" width="68" height="37" rx="2" fill="#1A2A1A"/><rect x="8"   y="485" width="68" height="37" rx="2" fill="none" stroke="#3A5A3A" stroke-width="1"/>
+<text x="42"  y="508" font-family="sans-serif" font-size="11" fill="#A09878" text-anchor="middle">1–18</text>
+<!-- EVEN -->
+<rect x="78"  y="485" width="68" height="37" rx="2" fill="#1A2A1A"/><rect x="78"  y="485" width="68" height="37" rx="2" fill="none" stroke="#3A5A3A" stroke-width="1"/>
+<text x="112" y="508" font-family="sans-serif" font-size="11" fill="#A09878" text-anchor="middle">EVEN</text>
+<!-- RED (active bet) -->
+<rect x="148" y="485" width="68" height="37" rx="2" fill="#5A0808"/>
+<rect x="148" y="485" width="68" height="37" rx="2" fill="none" stroke="#E6BF33" stroke-width="2"/>
+<text x="182" y="508" font-family="sans-serif" font-size="11" fill="#E6BF33" text-anchor="middle" font-weight="bold">RED</text>
+<!-- Chip on RED -->
+<circle cx="182" cy="490" r="9" fill="#CC1414"/>
+<text x="182" y="493" font-family="sans-serif" font-size="7" fill="#FFFFFF" text-anchor="middle" font-weight="bold">10</text>
+<!-- BLACK -->
+<rect x="218" y="485" width="68" height="37" rx="2" fill="#1A1A1A"/><rect x="218" y="485" width="68" height="37" rx="2" fill="none" stroke="#3A5A3A" stroke-width="1"/>
+<text x="252" y="508" font-family="sans-serif" font-size="11" fill="#A09878" text-anchor="middle">BLACK</text>
+<!-- ODD -->
+<rect x="288" y="485" width="68" height="37" rx="2" fill="#1A2A1A"/><rect x="288" y="485" width="68" height="37" rx="2" fill="none" stroke="#3A5A3A" stroke-width="1"/>
+<text x="322" y="508" font-family="sans-serif" font-size="11" fill="#A09878" text-anchor="middle">ODD</text>
+<!-- 19-36 -->
+<rect x="358" y="485" width="66" height="37" rx="2" fill="#1A2A1A"/><rect x="358" y="485" width="66" height="37" rx="2" fill="none" stroke="#3A5A3A" stroke-width="1"/>
+<text x="391" y="508" font-family="sans-serif" font-size="11" fill="#A09878" text-anchor="middle">19–36</text>
+
+<!-- ===== CHIP SELECTOR ===== -->
+<rect x="0" y="524" width="432" height="56" fill="#0A140A"/>
+<rect x="0" y="524" width="432" height="1" fill="#1E3A1E"/>
+
+<text x="18" y="540" font-family="sans-serif" font-size="9" fill="#706050" letter-spacing="2">SELECT CHIP</text>
+
+<!-- Chip 5 (white) -->
+<circle cx="72"  cy="553" r="18" fill="#D8D0C0"/><circle cx="72"  cy="553" r="16" fill="none" stroke="#B0A890" stroke-width="1.5"/>
+<text x="72"  y="558" font-family="sans-serif" font-size="11" fill="#2A2018" text-anchor="middle" font-weight="bold">5</text>
+<!-- Chip 10 (blue) -->
+<circle cx="120" cy="553" r="18" fill="#1A4A8A"/><circle cx="120" cy="553" r="16" fill="none" stroke="#2A6ACA" stroke-width="1.5"/>
+<text x="120" y="558" font-family="sans-serif" font-size="11" fill="#F0E6D0" text-anchor="middle" font-weight="bold">10</text>
+<!-- Chip 25 (green, ACTIVE) -->
+<circle cx="168" cy="553" r="20" fill="#1A6A2A"/><circle cx="168" cy="553" r="18" fill="none" stroke="#E6BF33" stroke-width="2.5"/>
+<text x="168" y="558" font-family="sans-serif" font-size="11" fill="#F0E6D0" text-anchor="middle" font-weight="bold">25</text>
+<!-- Active indicator -->
+<circle cx="168" cy="532" r="4" fill="#E6BF33"/>
+<!-- Chip 50 (orange) -->
+<circle cx="216" cy="553" r="18" fill="#8A4A0A"/><circle cx="216" cy="553" r="16" fill="none" stroke="#CA8A1A" stroke-width="1.5"/>
+<text x="216" y="558" font-family="sans-serif" font-size="11" fill="#F0E6D0" text-anchor="middle" font-weight="bold">50</text>
+<!-- Chip 100 (red) -->
+<circle cx="264" cy="553" r="18" fill="#7A0A0A"/><circle cx="264" cy="553" r="16" fill="none" stroke="#AA2020" stroke-width="1.5"/>
+<text x="264" y="558" font-family="sans-serif" font-size="11" fill="#F0E6D0" text-anchor="middle" font-weight="bold">100</text>
+
+<!-- Bet summary (right of chips) -->
+<text x="320" y="544" font-family="sans-serif" font-size="9" fill="#706050" text-anchor="middle" letter-spacing="1">BET TOTAL</text>
+<text x="320" y="562" font-family="Georgia,serif" font-size="16" font-weight="bold" fill="#E6BF33" text-anchor="middle">♦ 60</text>
+
+<!-- ===== ACTION BAR ===== -->
+<rect x="0" y="580" width="432" height="68" fill="#0A0E0A"/>
+<rect x="0" y="580" width="432" height="1" fill="#1E3A1E"/>
+
+<!-- CLEAR button -->
+<rect x="12" y="592" width="118" height="44" rx="6" fill="#2A0808"/>
+<rect x="12" y="592" width="118" height="44" rx="6" fill="none" stroke="#5A1818" stroke-width="1"/>
+<text x="71" y="619" font-family="Georgia,serif" font-size="15" fill="#9E5050" text-anchor="middle">✕ CLEAR</text>
+
+<!-- SPIN button (gold, prominent) -->
+<rect x="142" y="586" width="278" height="56" rx="8" fill="#E6BF33"/>
+<rect x="144" y="588" width="274" height="52" rx="7" fill="none" stroke="#F0D86050" stroke-width="1.5"/>
+<text x="281" y="622" font-family="Georgia,serif" font-size="22" font-weight="bold" fill="#080604" text-anchor="middle" letter-spacing="4">SPIN</text>
+
+<!-- ===== LORE STRIP ===== -->
+<rect x="0" y="648" width="432" height="30" fill="#080D08"/>
+<rect x="0" y="648" width="432" height="1" fill="#1E3A1E"/>
+<text x="216" y="668" font-family="Georgia,serif" font-size="11" fill="#A09878" text-anchor="middle" font-style="italic">"The wheel has no memory. Neither do your losses."</text>
+
+<!-- Footer -->
+<line x1="0" y1="678" x2="432" y2="678" stroke="#E6BF3810" stroke-width="1"/>
+<text x="216" y="694" font-family="sans-serif" font-size="9" fill="#40302070" text-anchor="middle">Score: 156 / 400  ·  Chips: 185  ·  Spins left: 2</text>
+
+<rect x="0" y="764" width="432" height="4" fill="#E6BF3828"/>
+</svg>

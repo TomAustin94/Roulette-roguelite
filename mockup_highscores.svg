@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="432" height="768" viewBox="0 0 432 768" style="background:#0D120D">
+<!-- HIGH SCORES SCREEN — Issue #4 -->
+<defs>
+<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+<path d="M40,0 L0,0 0,40" fill="none" stroke="#ffffff06" stroke-width="0.5"/>
+</pattern>
+</defs>
+<rect width="432" height="768" fill="url(#grid)"/>
+<rect x="0" y="0" width="432" height="3" fill="#E6BF33"/>
+
+<!-- Corner ornaments -->
+<path d="M 16,10 L 68,10 M 16,10 L 16,42" stroke="#E6BF33" stroke-width="1" opacity="0.5" fill="none"/>
+<circle cx="16" cy="10" r="2" fill="#E6BF3380"/>
+<path d="M 416,10 L 364,10 M 416,10 L 416,42" stroke="#E6BF33" stroke-width="1" opacity="0.5" fill="none"/>
+<circle cx="416" cy="10" r="2" fill="#E6BF3380"/>
+
+<!-- ===== HEADER ===== -->
+<rect x="0" y="3" width="432" height="88" fill="#0A140A"/>
+<rect x="0" y="91" width="432" height="1" fill="#E6BF3830"/>
+
+<!-- Small roulette wheel watermark -->
+<circle cx="216" cy="48" r="36" fill="none" stroke="#E6BF3308" stroke-width="20"/>
+<circle cx="216" cy="48" r="20" fill="none" stroke="#E6BF3312" stroke-width="8"/>
+
+<text x="216" y="30" font-family="sans-serif" font-size="10" fill="#706050" text-anchor="middle" letter-spacing="4">♦ ALL TIME ♦</text>
+<text x="216" y="62" font-family="Georgia,serif" font-size="32" font-weight="bold" fill="#E6BF33" text-anchor="middle" letter-spacing="3">HIGH SCORES</text>
+<text x="216" y="82" font-family="sans-serif" font-size="11" fill="#A09878" text-anchor="middle">Best runs across all five realms</text>
+
+<!-- ===== SCORE ENTRIES ===== -->
+
+<!-- ─── Entry #1 — GOLD (Full run cleared!) ─── -->
+<rect x="12" y="104" width="408" height="86" rx="8" fill="#1C1604"/>
+<rect x="12" y="104" width="408" height="86" rx="8" fill="none" stroke="#E6BF33" stroke-width="1.5"/>
+<!-- Gold left accent bar -->
+<rect x="12" y="104" width="5" height="86" rx="0" fill="#E6BF33"/>
+<!-- Rank medal (GOLD) -->
+<circle cx="50" cy="147" r="22" fill="#E6BF33"/>
+<circle cx="50" cy="147" r="19" fill="#C8A020"/>
+<circle cx="50" cy="147" r="15" fill="#E6BF33"/>
+<text x="50" y="152" font-family="Georgia,serif" font-size="14" font-weight="bold" fill="#5A3800" text-anchor="middle">1</text>
+<!-- Crown above medal -->
+<path d="M 38,128 L 42,118 L 50,124 L 58,118 L 62,128 Z" fill="#E6BF33"/>
+
+<!-- Run details -->
+<text x="84" y="128" font-family="Georgia,serif" font-size="15" font-weight="bold" fill="#F0E6D0">★ YOU'RE FREE</text>
+<text x="84" y="146" font-family="sans-serif" font-size="11" fill="#A09878">All 5 floors cleared  ·  15 rounds  ·  75 spins</text>
+<text x="84" y="163" font-family="sans-serif" font-size="10" fill="#706050">Mar 24, 2025  ·  37m 14s</text>
+
+<!-- Score (right) -->
+<text x="408" y="132" font-family="Georgia,serif" font-size="22" font-weight="bold" fill="#E6BF33" text-anchor="end">24,580</text>
+<text x="408" y="150" font-family="sans-serif" font-size="10" fill="#A09878" text-anchor="end">pts</text>
+<!-- Mods count badge -->
+<rect x="352" y="158" width="60" height="18" rx="4" fill="#1E1604"/>
+<rect x="352" y="158" width="60" height="18" rx="4" fill="none" stroke="#E6BF3340" stroke-width="1"/>
+<text x="382" y="171" font-family="sans-serif" font-size="9" fill="#E6BF33" text-anchor="middle">8 mods</text>
+
+<!-- ─── Entry #2 — SILVER ─── -->
+<rect x="12" y="200" width="408" height="78" rx="8" fill="#141818"/>
+<rect x="12" y="200" width="408" height="78" rx="8" fill="none" stroke="#9090A0" stroke-width="1"/>
+<rect x="12" y="200" width="5" height="78" rx="0" fill="#9090A0"/>
+<!-- Silver medal -->
+<circle cx="50" cy="239" r="20" fill="#9090A0"/>
+<circle cx="50" cy="239" r="17" fill="#787888"/>
+<circle cx="50" cy="239" r="13" fill="#9090A0"/>
+<text x="50" y="244" font-family="Georgia,serif" font-size="14" font-weight="bold" fill="#2A2A2A" text-anchor="middle">2</text>
+
+<text x="84" y="222" font-family="Georgia,serif" font-size="14" font-weight="bold" fill="#F0E6D0">Floor 4 · The Sunken Hall</text>
+<text x="84" y="240" font-family="sans-serif" font-size="11" fill="#A09878">Reached Round 2  ·  42 spins taken</text>
+<text x="84" y="257" font-family="sans-serif" font-size="10" fill="#706050">Mar 20, 2025  ·  28m 52s</text>
+<text x="408" y="226" font-family="Georgia,serif" font-size="20" font-weight="bold" fill="#C0C0D0" text-anchor="end">18,930</text>
+<text x="408" y="244" font-family="sans-serif" font-size="10" fill="#A09878" text-anchor="end">pts</text>
+<rect x="352" y="252" width="60" height="18" rx="4" fill="#141818"/>
+<rect x="352" y="252" width="60" height="18" rx="4" fill="none" stroke="#90909040" stroke-width="1"/>
+<text x="382" y="265" font-family="sans-serif" font-size="9" fill="#9090A0" text-anchor="middle">6 mods</text>
+
+<!-- ─── Entry #3 — BRONZE ─── -->
+<rect x="12" y="288" width="408" height="78" rx="8" fill="#140E08"/>
+<rect x="12" y="288" width="408" height="78" rx="8" fill="none" stroke="#A06030" stroke-width="1"/>
+<rect x="12" y="288" width="5" height="78" rx="0" fill="#A06030"/>
+<!-- Bronze medal -->
+<circle cx="50" cy="327" r="20" fill="#A06030"/>
+<circle cx="50" cy="327" r="17" fill="#845020"/>
+<circle cx="50" cy="327" r="13" fill="#A06030"/>
+<text x="50" y="332" font-family="Georgia,serif" font-size="14" font-weight="bold" fill="#2A1800" text-anchor="middle">3</text>
+
+<text x="84" y="310" font-family="Georgia,serif" font-size="14" font-weight="bold" fill="#F0E6D0">Floor 3 · The Neon Purgatory</text>
+<text x="84" y="328" font-family="sans-serif" font-size="11" fill="#A09878">Boss Round failed  ·  33 spins taken</text>
+<text x="84" y="345" font-family="sans-serif" font-size="10" fill="#706050">Mar 19, 2025  ·  21m 06s</text>
+<text x="408" y="314" font-family="Georgia,serif" font-size="20" font-weight="bold" fill="#B07848" text-anchor="end">11,240</text>
+<text x="408" y="332" font-family="sans-serif" font-size="10" fill="#A09878" text-anchor="end">pts</text>
+<rect x="352" y="340" width="60" height="18" rx="4" fill="#140E08"/>
+<rect x="352" y="340" width="60" height="18" rx="4" fill="none" stroke="#A0603040" stroke-width="1"/>
+<text x="382" y="353" font-family="sans-serif" font-size="9" fill="#A06030" text-anchor="middle">4 mods</text>
+
+<!-- ─── Entry #4 ─── -->
+<rect x="12" y="376" width="408" height="72" rx="8" fill="#0E120E"/>
+<rect x="12" y="376" width="408" height="72" rx="8" fill="none" stroke="#3A4A3A" stroke-width="1"/>
+<rect x="12" y="376" width="5" height="72" rx="0" fill="#3A4A3A"/>
+<!-- Plain rank indicator -->
+<circle cx="50" cy="412" r="18" fill="none" stroke="#3A4A3A" stroke-width="2"/>
+<text x="50" y="417" font-family="Georgia,serif" font-size="14" fill="#5A6A5A" text-anchor="middle">4</text>
+
+<text x="84" y="397" font-family="Georgia,serif" font-size="14" fill="#C0B090">Floor 2 · The Iron Parlour</text>
+<text x="84" y="415" font-family="sans-serif" font-size="11" fill="#706050">Round 1 cleared  ·  18 spins taken</text>
+<text x="84" y="432" font-family="sans-serif" font-size="10" fill="#504030">Mar 15, 2025  ·  14m 33s</text>
+<text x="408" y="400" font-family="Georgia,serif" font-size="18" fill="#A09878" text-anchor="end">6,440</text>
+<text x="408" y="418" font-family="sans-serif" font-size="10" fill="#706050" text-anchor="end">pts</text>
+<rect x="352" y="426" width="60" height="16" rx="4" fill="#0E120E"/>
+<rect x="352" y="426" width="60" height="16" rx="4" fill="none" stroke="#3A4A3A40" stroke-width="1"/>
+<text x="382" y="438" font-family="sans-serif" font-size="9" fill="#5A6A5A" text-anchor="middle">2 mods</text>
+
+<!-- ─── Entry #5 ─── -->
+<rect x="12" y="458" width="408" height="72" rx="8" fill="#0E120E"/>
+<rect x="12" y="458" width="408" height="72" rx="8" fill="none" stroke="#2A3A2A" stroke-width="1"/>
+<rect x="12" y="458" width="5" height="72" rx="0" fill="#2A3A2A"/>
+<circle cx="50" cy="494" r="18" fill="none" stroke="#2A3A2A" stroke-width="1.5"/>
+<text x="50" y="499" font-family="Georgia,serif" font-size="14" fill="#404A40" text-anchor="middle">5</text>
+
+<text x="84" y="479" font-family="Georgia,serif" font-size="14" fill="#A09878">Floor 1 · The Velvet Room</text>
+<text x="84" y="497" font-family="sans-serif" font-size="11" fill="#706050">Round 3 — boss round failed  ·  15 spins</text>
+<text x="84" y="514" font-family="sans-serif" font-size="10" fill="#504030">Mar 10, 2025  ·  9m 47s</text>
+<text x="408" y="482" font-family="Georgia,serif" font-size="18" fill="#706050" text-anchor="end">2,780</text>
+<text x="408" y="500" font-family="sans-serif" font-size="10" fill="#504030" text-anchor="end">pts</text>
+<rect x="352" y="508" width="60" height="16" rx="4" fill="#0E120E"/>
+<rect x="352" y="508" width="60" height="16" rx="4" fill="none" stroke="#2A3A2A40" stroke-width="1"/>
+<text x="382" y="520" font-family="sans-serif" font-size="9" fill="#404A40" text-anchor="middle">1 mod</text>
+
+<!-- ===== CURRENT RUN BANNER ===== -->
+<rect x="12" y="544" width="408" height="46" rx="8" fill="#101A10"/>
+<rect x="12" y="544" width="408" height="46" rx="8" fill="none" stroke="#E6BF3330" stroke-width="1" stroke-dasharray="4,4"/>
+<circle cx="36" cy="567" r="10" fill="#E6BF3330"/>
+<text x="36" y="571" font-family="sans-serif" font-size="10" fill="#E6BF33" text-anchor="middle">●</text>
+<text x="56" y="561" font-family="sans-serif" font-size="10" fill="#A09878">CURRENT RUN IN PROGRESS</text>
+<text x="56" y="578" font-family="sans-serif" font-size="11" fill="#E6BF33">Floor 1 · Round 1 · 156 pts so far</text>
+<text x="408" y="570" font-family="sans-serif" font-size="10" fill="#706050" text-anchor="end">NOT SAVED YET</text>
+
+<!-- ===== BACK TO MENU BUTTON ===== -->
+<rect x="32" y="606" width="368" height="56" rx="8" fill="#E6BF33"/>
+<rect x="34" y="608" width="364" height="52" rx="7" fill="none" stroke="#F0D86050" stroke-width="1.5"/>
+<text x="216" y="641" font-family="Georgia,serif" font-size="20" font-weight="bold" fill="#080604" text-anchor="middle" letter-spacing="4">BACK TO MENU</text>
+
+<!-- Divider + stats note -->
+<line x1="40" y1="676" x2="392" y2="676" stroke="#E6BF3818" stroke-width="1"/>
+<text x="216" y="698" font-family="sans-serif" font-size="10" fill="#504030" text-anchor="middle">Scores from completed rounds  ·  Resets with new runs</text>
+<text x="216" y="716" font-family="Georgia,serif" font-size="11" fill="#505030" text-anchor="middle" font-style="italic">"The house keeps score. So should you."</text>
+
+<text x="216" y="746" font-family="sans-serif" font-size="9" fill="#30201870" text-anchor="middle">FIVE FLOORS · ONE WHEEL · NO MERCY</text>
+
+<rect x="0" y="764" width="432" height="4" fill="#E6BF3828"/>
+</svg>

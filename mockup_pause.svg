@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="432" height="768" viewBox="0 0 432 768" style="background:#0D120D">
+<!-- PAUSE SCREEN — Issue #6 -->
+<defs>
+<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+<path d="M40,0 L0,0 0,40" fill="none" stroke="#ffffff06" stroke-width="0.5"/>
+</pattern>
+</defs>
+
+<!-- ===== DIMMED GAME SCREEN BEHIND (betting table visible, greyed out) ===== -->
+<rect width="432" height="768" fill="#0D120D"/>
+<rect width="432" height="768" fill="url(#grid)"/>
+
+<!-- Ghost HUD -->
+<rect x="0" y="0" width="432" height="80" fill="#0A140A" opacity="0.5"/>
+<text x="16" y="40" font-family="Georgia,serif" font-size="16" fill="#E6BF3330">The Velvet Room</text>
+<text x="400" y="40" font-family="Georgia,serif" font-size="18" fill="#E6BF3330" text-anchor="end">♦ 185</text>
+<rect x="16" y="56" width="400" height="4" rx="2" fill="#1A2A1A" opacity="0.5"/>
+<rect x="16" y="56" width="156" height="4" rx="2" fill="#E6BF3320"/>
+
+<!-- Ghost betting table (faint) -->
+<rect x="8" y="100" width="416" height="30" rx="2" fill="#0A661520" opacity="0.4"/>
+<rect x="8" y="133" width="33" height="32" rx="2" fill="#9E101015" opacity="0.4"/>
+<rect x="43" y="133" width="33" height="32" rx="2" fill="#1A1A1A20" opacity="0.4"/>
+<rect x="78" y="133" width="33" height="32" rx="2" fill="#9E101015" opacity="0.4"/>
+<rect x="113" y="133" width="33" height="32" rx="2" fill="#9E101015" opacity="0.4"/>
+<rect x="148" y="133" width="33" height="32" rx="2" fill="#1A1A1A20" opacity="0.4"/>
+<rect x="183" y="133" width="33" height="32" rx="2" fill="#9E101015" opacity="0.4"/>
+<rect x="218" y="133" width="33" height="32" rx="2" fill="#9E101015" opacity="0.4"/>
+<rect x="253" y="133" width="33" height="32" rx="2" fill="#1A1A1A20" opacity="0.4"/>
+<rect x="288" y="133" width="33" height="32" rx="2" fill="#9E101015" opacity="0.4"/>
+<rect x="323" y="133" width="33" height="32" rx="2" fill="#9E101015" opacity="0.4"/>
+<rect x="358" y="133" width="33" height="32" rx="2" fill="#1A1A1A20" opacity="0.4"/>
+<rect x="393" y="133" width="31" height="32" rx="2" fill="#9E101015" opacity="0.4"/>
+
+<!-- Ghost wheel -->
+<circle cx="216" cy="340" r="120" fill="none" stroke="#E6BF3308" stroke-width="50" opacity="0.3"/>
+<circle cx="216" cy="340" r="50" fill="none" stroke="#8C631808" stroke-width="4" opacity="0.3"/>
+
+<!-- ===== DARK SCRIM OVERLAY ===== -->
+<rect width="432" height="768" fill="#000000" opacity="0.72"/>
+
+<!-- ===== PAUSE CARD ===== -->
+<rect x="24" y="140" width="384" height="470" rx="14" fill="#0E1A0E"/>
+<rect x="24" y="140" width="384" height="470" rx="14" fill="none" stroke="#E6BF33" stroke-width="1.5"/>
+<!-- Gold top bar on card -->
+<rect x="24" y="140" width="384" height="5" rx="0" fill="#E6BF33" opacity="0.9"/>
+
+<!-- Corner ornaments on card -->
+<path d="M 38,154 L 72,154 M 38,154 L 38,178" stroke="#E6BF33" stroke-width="1" opacity="0.5" fill="none"/>
+<path d="M 394,154 L 360,154 M 394,154 L 394,178" stroke="#E6BF33" stroke-width="1" opacity="0.5" fill="none"/>
+
+<!-- PAUSED title -->
+<text x="216" y="194" font-family="Georgia,serif" font-size="32" font-weight="bold" fill="#E6BF33" text-anchor="middle" letter-spacing="8">II PAUSED</text>
+
+<!-- Diamond separator -->
+<line x1="64" y1="208" x2="190" y2="208" stroke="#E6BF3340" stroke-width="1"/>
+<path d="M 216,201 L 223,208 L 216,215 L 209,208 Z" fill="#E6BF33"/>
+<line x1="242" y1="208" x2="368" y2="208" stroke="#E6BF3340" stroke-width="1"/>
+
+<!-- ===== CURRENT RUN SNAPSHOT ===== -->
+<rect x="44" y="222" width="344" height="148" rx="8" fill="#0A100A"/>
+<rect x="44" y="222" width="344" height="148" rx="8" fill="none" stroke="#2A3A2A" stroke-width="1"/>
+
+<text x="64" y="244" font-family="sans-serif" font-size="9" fill="#A09878" letter-spacing="2">RUN SNAPSHOT</text>
+<line x1="60" y1="250" x2="372" y2="250" stroke="#2A3A2A" stroke-width="1"/>
+
+<!-- Run details grid -->
+<text x="64" y="270" font-family="sans-serif" font-size="11" fill="#706050">Floor</text>
+<text x="372" y="270" font-family="Georgia,serif" font-size="13" fill="#F0E6D0" text-anchor="end">1 / 5 — The Velvet Room</text>
+
+<text x="64" y="290" font-family="sans-serif" font-size="11" fill="#706050">Round / Spin</text>
+<text x="372" y="290" font-family="Georgia,serif" font-size="13" fill="#F0E6D0" text-anchor="end">Round 1 / 3  ·  Spin 3 / 5</text>
+
+<text x="64" y="310" font-family="sans-serif" font-size="11" fill="#706050">Chips</text>
+<text x="372" y="310" font-family="Georgia,serif" font-size="13" fill="#E6BF33" text-anchor="end">♦ 185</text>
+
+<text x="64" y="330" font-family="sans-serif" font-size="11" fill="#706050">Score Progress</text>
+<text x="372" y="330" font-family="Georgia,serif" font-size="13" fill="#4AAA4A" text-anchor="end">156 / 400 pts  (39%)</text>
+
+<text x="64" y="352" font-family="sans-serif" font-size="11" fill="#706050">Active Mods</text>
+<text x="372" y="352" font-family="sans-serif" font-size="11" fill="#C0B090" text-anchor="end">Straight Razor, Grim Refund</text>
+
+<!-- Small score progress bar in snapshot -->
+<rect x="60" y="360" width="348" height="4" rx="2" fill="#1A2A1A"/>
+<rect x="60" y="360" width="136" height="4" rx="2" fill="#4AAA4A"/>
+
+<!-- Separator -->
+<line x1="44" y1="382" x2="388" y2="382" stroke="#E6BF3820" stroke-width="1"/>
+
+<!-- ===== PAUSE MENU OPTIONS ===== -->
+
+<!-- RESUME — primary gold button -->
+<rect x="44" y="394" width="344" height="54" rx="8" fill="#E6BF33"/>
+<rect x="46" y="396" width="340" height="50" rx="7" fill="none" stroke="#F0D86050" stroke-width="1.5"/>
+<text x="216" y="428" font-family="Georgia,serif" font-size="20" font-weight="bold" fill="#080604" text-anchor="middle" letter-spacing="4">▶  RESUME</text>
+
+<!-- SAVE AND QUIT — secondary -->
+<rect x="44" y="460" width="344" height="50" rx="8" fill="#101A10"/>
+<rect x="44" y="460" width="344" height="50" rx="8" fill="none" stroke="#E6BF3332" stroke-width="1"/>
+<text x="216" y="486" font-family="Georgia,serif" font-size="16" fill="#C0B090" text-anchor="middle">⬛  SAVE &amp; QUIT</text>
+<text x="216" y="502" font-family="sans-serif" font-size="10" fill="#706050" text-anchor="middle">Progress saved — resume next time you play</text>
+
+<!-- Separator before danger option -->
+<line x1="64" y1="526" x2="368" y2="526" stroke="#E6BF3816" stroke-width="1"/>
+
+<!-- START NEW RUN — danger button -->
+<rect x="44" y="536" width="344" height="50" rx="8" fill="#240A0A"/>
+<rect x="44" y="536" width="344" height="50" rx="8" fill="none" stroke="#9E101050" stroke-width="1"/>
+<text x="216" y="562" font-family="Georgia,serif" font-size="16" fill="#9E5050" text-anchor="middle">↩  START NEW RUN</text>
+<text x="216" y="577" font-family="sans-serif" font-size="10" fill="#704040" text-anchor="middle">Warning: current run will be permanently lost</text>
+
+<!-- ===== BOTTOM OF CARD — settings hint ===== -->
+<line x1="44" y1="600" x2="388" y2="600" stroke="#E6BF3812" stroke-width="1"/>
+<text x="216" y="618" font-family="sans-serif" font-size="10" fill="#504030" text-anchor="middle">Tap outside to resume  ·  Sound: ON  ·  v0.9</text>
+
+<!-- ===== BOTTOM GOLD BAR ===== -->
+<rect x="0" y="764" width="432" height="4" fill="#E6BF3828"/>
+</svg>

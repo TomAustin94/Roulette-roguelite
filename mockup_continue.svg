@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="432" height="768" viewBox="0 0 432 768" style="background:#0D120D">
+<!-- CONTINUE / NEW RUN DIALOG — shown on app launch if save exists (Issue #5)
+     Top half = "WELCOME BACK" (saved run found)
+     Bottom half = after loss state for reference -->
+<defs>
+<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+<path d="M40,0 L0,0 0,40" fill="none" stroke="#ffffff06" stroke-width="0.5"/>
+</pattern>
+</defs>
+<rect width="432" height="768" fill="url(#grid)"/>
+<rect x="0" y="0" width="432" height="3" fill="#E6BF33"/>
+
+<!-- ===== BACKGROUND WHEEL WATERMARK ===== -->
+<!-- Faint large wheel in background -->
+<circle cx="216" cy="240" r="195" fill="none" stroke="#E6BF3306" stroke-width="80"/>
+<circle cx="216" cy="240" r="140" fill="none" stroke="#E6BF3304" stroke-width="40"/>
+<circle cx="216" cy="240" r="80" fill="none" stroke="#E6BF3306" stroke-width="20"/>
+
+<!-- ===== STATE 1: APP LAUNCH WITH SAVED RUN ===== -->
+
+<!-- State label (annotation) -->
+<text x="216" y="22" font-family="sans-serif" font-size="9" fill="#504030" text-anchor="middle" letter-spacing="2">STATE 1: APP LAUNCH · SAVED RUN EXISTS</text>
+
+<!-- Game title (small, above dialog) -->
+<text x="216" y="52" font-family="Georgia,serif" font-size="22" font-weight="bold" fill="#E6BF33" text-anchor="middle">ROULETTE ROGUELITE</text>
+<text x="216" y="70" font-family="sans-serif" font-size="11" fill="#706050" text-anchor="middle" font-style="italic">You left in the middle of something...</text>
+
+<!-- Main dialog card -->
+<rect x="20" y="82" width="392" height="316" rx="12" fill="#0E180E"/>
+<rect x="20" y="82" width="392" height="316" rx="12" fill="none" stroke="#E6BF33" stroke-width="1.5"/>
+<!-- Gold top bar on card -->
+<rect x="20" y="82" width="392" height="4" rx="0" fill="#E6BF33" opacity="0.8"/>
+
+<!-- Card title -->
+<text x="216" y="116" font-family="Georgia,serif" font-size="26" font-weight="bold" fill="#E6BF33" text-anchor="middle">WELCOME BACK</text>
+
+<!-- Diamond separator -->
+<line x1="60" y1="127" x2="185" y2="127" stroke="#E6BF3340" stroke-width="1"/>
+<path d="M 216,120 L 223,127 L 216,134 L 209,127 Z" fill="#E6BF33"/>
+<line x1="247" y1="127" x2="372" y2="127" stroke="#E6BF3340" stroke-width="1"/>
+
+<!-- "Run In Progress" badge -->
+<rect x="140" y="138" width="152" height="24" rx="4" fill="#E6BF3318"/>
+<rect x="140" y="138" width="152" height="24" rx="4" fill="none" stroke="#E6BF3340" stroke-width="1"/>
+<text x="216" y="154" font-family="sans-serif" font-size="10" fill="#E6BF33" text-anchor="middle" letter-spacing="2">RUN IN PROGRESS</text>
+
+<!-- Run details rows -->
+<rect x="40" y="174" width="352" height="130" rx="8" fill="#0A100A"/>
+<rect x="40" y="174" width="352" height="130" rx="8" fill="none" stroke="#2A3A2A" stroke-width="1"/>
+
+<!-- Floor -->
+<text x="60" y="198" font-family="sans-serif" font-size="11" fill="#706050">Floor</text>
+<text x="372" y="198" font-family="Georgia,serif" font-size="13" fill="#F0E6D0" text-anchor="end">2 — The Iron Parlour</text>
+<line x1="56" y1="204" x2="376" y2="204" stroke="#2A3A2A" stroke-width="1"/>
+
+<!-- Round -->
+<text x="60" y="224" font-family="sans-serif" font-size="11" fill="#706050">Round</text>
+<text x="372" y="224" font-family="Georgia,serif" font-size="13" fill="#F0E6D0" text-anchor="end">2 of 3</text>
+<line x1="56" y1="230" x2="376" y2="230" stroke="#2A3A2A" stroke-width="1"/>
+
+<!-- Chips -->
+<text x="60" y="250" font-family="sans-serif" font-size="11" fill="#706050">Chips</text>
+<text x="372" y="250" font-family="Georgia,serif" font-size="13" fill="#E6BF33" text-anchor="end">♦ 245</text>
+<line x1="56" y1="256" x2="376" y2="256" stroke="#2A3A2A" stroke-width="1"/>
+
+<!-- Score progress -->
+<text x="60" y="276" font-family="sans-serif" font-size="11" fill="#706050">Score Progress</text>
+<text x="372" y="276" font-family="Georgia,serif" font-size="13" fill="#4AAA4A" text-anchor="end">680 / 980 pts</text>
+<line x1="56" y1="282" x2="376" y2="282" stroke="#2A3A2A" stroke-width="1"/>
+
+<!-- Mods -->
+<text x="60" y="298" font-family="sans-serif" font-size="11" fill="#706050">Active Mods</text>
+<text x="372" y="298" font-family="sans-serif" font-size="12" fill="#C0B090" text-anchor="end">Straight Razor, Grim Refund</text>
+
+<!-- CONTINUE RUN button (primary) -->
+<rect x="40" y="316" width="352" height="54" rx="8" fill="#E6BF33"/>
+<rect x="42" y="318" width="348" height="50" rx="7" fill="none" stroke="#F0D86050" stroke-width="1.5"/>
+<text x="216" y="349" font-family="Georgia,serif" font-size="20" font-weight="bold" fill="#080604" text-anchor="middle" letter-spacing="3">CONTINUE RUN →</text>
+
+<!-- START NEW RUN button (danger) -->
+<rect x="40" y="378" width="352" height="46" rx="8" fill="#2A0A0A"/>
+<rect x="40" y="378" width="352" height="46" rx="8" fill="none" stroke="#9E101050" stroke-width="1"/>
+<text x="216" y="406" font-family="Georgia,serif" font-size="16" fill="#9E5050" text-anchor="middle">✕ START NEW RUN</text>
+<text x="216" y="420" font-family="sans-serif" font-size="9" fill="#704040" text-anchor="middle">This will permanently erase your current run</text>
+
+<!-- ===== DIVIDER BETWEEN STATES ===== -->
+<line x1="20" y1="412" x2="412" y2="412" stroke="#E6BF3830" stroke-width="1" stroke-dasharray="6,4"/>
+<text x="216" y="430" font-family="sans-serif" font-size="9" fill="#50402870" text-anchor="middle" letter-spacing="2">STATE 2: AFTER LOSING ALL CHIPS</text>
+
+<!-- ===== STATE 2: LOSS → NEW RUN ===== -->
+<!-- Game Over overlay style card -->
+<rect x="20" y="438" width="392" height="278" rx="12" fill="#160808"/>
+<rect x="20" y="438" width="392" height="278" rx="12" fill="none" stroke="#9E1010" stroke-width="1.5"/>
+<rect x="20" y="438" width="392" height="4" rx="0" fill="#9E1010" opacity="0.8"/>
+
+<!-- Loss header -->
+<text x="216" y="476" font-family="Georgia,serif" font-size="28" font-weight="bold" fill="#CC2020" text-anchor="middle" letter-spacing="4">THE HOUSE WINS.</text>
+<line x1="60" y1="487" x2="185" y2="487" stroke="#9E101040" stroke-width="1"/>
+<path d="M 216,480 L 223,487 L 216,494 L 209,487 Z" fill="#9E1010"/>
+<line x1="247" y1="487" x2="372" y2="487" stroke="#9E101040" stroke-width="1"/>
+
+<!-- Flavour text -->
+<text x="216" y="512" font-family="Georgia,serif" font-size="13" fill="#9E5050" text-anchor="middle" font-style="italic">"You came so far. And yet — not far enough."</text>
+
+<!-- Run stats (compact) -->
+<rect x="40" y="524" width="352" height="88" rx="6" fill="#0E0808"/>
+<rect x="40" y="524" width="352" height="88" rx="6" fill="none" stroke="#5A1818" stroke-width="1"/>
+<text x="60" y="548" font-family="sans-serif" font-size="11" fill="#706050">Floors Cleared</text>
+<text x="372" y="548" font-family="Georgia,serif" font-size="13" fill="#F0E6D0" text-anchor="end">2 of 5</text>
+<text x="60" y="570" font-family="sans-serif" font-size="11" fill="#706050">Total Spins</text>
+<text x="372" y="570" font-family="Georgia,serif" font-size="13" fill="#F0E6D0" text-anchor="end">34</text>
+<text x="60" y="592" font-family="sans-serif" font-size="11" fill="#706050">Final Score</text>
+<text x="372" y="592" font-family="Georgia,serif" font-size="13" fill="#E6BF33" text-anchor="end">8,240 pts</text>
+<text x="60" y="608" font-family="sans-serif" font-size="10" fill="#504030">Biggest Win: ♦ 350  ·  Mods Held: 4</text>
+
+<!-- START NEW RUN (primary gold) -->
+<rect x="40" y="624" width="352" height="52" rx="8" fill="#E6BF33"/>
+<rect x="42" y="626" width="348" height="48" rx="7" fill="none" stroke="#F0D86050" stroke-width="1.5"/>
+<text x="216" y="656" font-family="Georgia,serif" font-size="20" font-weight="bold" fill="#080604" text-anchor="middle" letter-spacing="3">START NEW RUN</text>
+
+<!-- MAIN MENU (secondary) -->
+<text x="216" y="706" font-family="Georgia,serif" font-size="14" fill="#706050" text-anchor="middle">← MAIN MENU</text>
+<line x1="140" y1="710" x2="292" y2="710" stroke="#E6BF3820" stroke-width="1"/>
+
+<text x="216" y="746" font-family="sans-serif" font-size="9" fill="#30201870" text-anchor="middle">FIVE FLOORS · ONE WHEEL · NO MERCY</text>
+
+<rect x="0" y="764" width="432" height="4" fill="#E6BF3828"/>
+</svg>
