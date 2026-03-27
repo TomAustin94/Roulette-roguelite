@@ -14,7 +14,7 @@ func _build_ui() -> void:
 	# Decorative wheel silhouette (simple arcs)
 	var deco := _make_deco()
 	deco.set_anchors_preset(Control.PRESET_TOP_WIDE)
-	deco.custom_minimum_size = Vector2(0, 420)
+	deco.custom_minimum_size = Vector2(0, 300)
 	add_child(deco)
 
 	# Content VBox
@@ -26,7 +26,7 @@ func _build_ui() -> void:
 
 	# Spacer (wheel deco area)
 	var spacer := Control.new()
-	spacer.custom_minimum_size = Vector2(0, 360)
+	spacer.custom_minimum_size = Vector2(0, 260)
 	vbox.add_child(spacer)
 
 	# Title
@@ -47,7 +47,7 @@ func _build_ui() -> void:
 	sub.add_theme_font_size_override("font_size", 16)
 	sub.add_theme_color_override("font_color", Color(0.75, 0.70, 0.60))
 	sub.autowrap_mode = TextServer.AUTOWRAP_WORD
-	sub.custom_minimum_size.x = 700
+	sub.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	vbox.add_child(sub)
 
 	var sep := Control.new()

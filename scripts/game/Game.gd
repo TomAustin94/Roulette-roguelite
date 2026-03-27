@@ -17,9 +17,9 @@ var _win_popup:     WinPopup
 var _selected_chip: int = 5
 
 # ─── Layout ───────────────────────────────────────────────────────────────────
-const HUD_HEIGHT   := 195
-const WHEEL_HEIGHT := 430
-const BTN_BAR_H    := 140
+const HUD_HEIGHT   := 110
+const WHEEL_HEIGHT := 310
+const BTN_BAR_H    := 118
 
 func _ready() -> void:
 	_build_scene()
@@ -71,9 +71,8 @@ func _build_scene() -> void:
 
 	# ── Dealer character (left side of wheel panel) ───────────────────────────
 	_dealer = DealerCharacter.new()
-	_dealer.char_scale = 1.15
-	# Position: left side of wheel panel, vertically centred
-	_dealer.position = Vector2(160, 280)
+	_dealer.char_scale = 0.9
+	_dealer.position = Vector2(140, 220)
 	_wheel_panel.add_child(_dealer)
 
 	# ── Win popup (centred over wheel, hidden until spin resolves) ────────────
@@ -110,26 +109,31 @@ func _build_scene() -> void:
 	# Chip selector row
 	_chip_bar = HBoxContainer.new()
 	_chip_bar.alignment = BoxContainer.ALIGNMENT_CENTER
-	_chip_bar.add_theme_constant_override("separation", 10)
-	_chip_bar.custom_minimum_size.y = 68
+	_chip_bar.add_theme_constant_override("separation", 6)
+	_chip_bar.custom_minimum_size.y = 56
+	_chip_bar.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	btn_bar.add_child(_chip_bar)
 
 	for i in Constants.CHIP_VALUES.size():
 		var val := Constants.CHIP_VALUES[i]
 		var chip_btn := _make_chip_button(val, Constants.CHIP_COLORS[i])
+		chip_btn.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		_chip_bar.add_child(chip_btn)
 
 	# Spin + Clear row
 	var action_row := HBoxContainer.new()
 	action_row.alignment = BoxContainer.ALIGNMENT_CENTER
-	action_row.add_theme_constant_override("separation", 16)
-	action_row.custom_minimum_size.y = 66
+	action_row.add_theme_constant_override("separation", 10)
+	action_row.custom_minimum_size.y = 58
+	action_row.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	btn_bar.add_child(action_row)
 
-	_clear_btn = _make_button("Clear", Color(0.5, 0.12, 0.12), 130)
+	_clear_btn = _make_button("Clear", Color(0.5, 0.12, 0.12), 100)
+	_clear_btn.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	action_row.add_child(_clear_btn)
 
-	_spin_btn = _make_button("SPIN", Constants.COLOR_GOLD, 320)
+	_spin_btn = _make_button("SPIN", Constants.COLOR_GOLD, 100)
+	_spin_btn.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	_spin_btn.add_theme_color_override("font_color", Color.BLACK)
 	action_row.add_child(_spin_btn)
 
@@ -153,7 +157,7 @@ func _on_mod_triggered(_id: String, description: String) -> void:
 func _make_chip_button(value: int, color: Color) -> Button:
 	var btn := Button.new()
 	btn.text = str(value)
-	btn.custom_minimum_size = Vector2(74, 60)
+	btn.custom_minimum_size = Vector2(0, 52)
 	btn.add_theme_font_size_override("font_size", 15)
 
 	var normal := StyleBoxFlat.new()
@@ -272,8 +276,8 @@ func _transition_to(path: String) -> void:
 func _make_button(label: String, color: Color, width: int) -> Button:
 	var btn := Button.new()
 	btn.text = label
-	btn.custom_minimum_size = Vector2(width, 62)
-	btn.add_theme_font_size_override("font_size", 21)
+	btn.custom_minimum_size = Vector2(width, 54)
+	btn.add_theme_font_size_override("font_size", 20)
 
 	var style := StyleBoxFlat.new()
 	style.bg_color = color.darkened(0.15)

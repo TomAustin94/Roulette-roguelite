@@ -23,16 +23,22 @@ func _build_ui() -> void:
 	strip.custom_minimum_size.y = 6
 	add_child(strip)
 
-	var vbox := VBoxContainer.new()
-	vbox.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	vbox.add_theme_constant_override("separation", 18)
+	var scroll := ScrollContainer.new()
+	scroll.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	add_child(scroll)
+
 	var margin := MarginContainer.new()
-	margin.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	margin.add_theme_constant_override("margin_left",   32)
-	margin.add_theme_constant_override("margin_right",  32)
-	margin.add_theme_constant_override("margin_top",    48)
-	margin.add_theme_constant_override("margin_bottom", 32)
-	add_child(margin)
+	margin.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	margin.add_theme_constant_override("margin_left",   24)
+	margin.add_theme_constant_override("margin_right",  24)
+	margin.add_theme_constant_override("margin_top",    36)
+	margin.add_theme_constant_override("margin_bottom", 24)
+	scroll.add_child(margin)
+
+	var vbox := VBoxContainer.new()
+	vbox.add_theme_constant_override("separation", 14)
+	vbox.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	margin.add_child(vbox)
 
 	# Header
@@ -86,6 +92,7 @@ func _build_ui() -> void:
 
 	# Continue button
 	var cont_btn := _make_button("CONTINUE →", Constants.COLOR_GREEN.lightened(0.15), Color.WHITE)
+	cont_btn.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	cont_btn.pressed.connect(_on_continue)
 	vbox.add_child(cont_btn)
 
@@ -211,7 +218,7 @@ func _make_label(text: String, fsize: int, color: Color, bold: bool = false) -> 
 func _make_button(label: String, bg: Color, text_color: Color) -> Button:
 	var btn := Button.new()
 	btn.text = label
-	btn.custom_minimum_size = Vector2(300, 60)
+	btn.custom_minimum_size = Vector2(0, 60)
 	btn.add_theme_font_size_override("font_size", 20)
 	btn.add_theme_color_override("font_color", text_color)
 
