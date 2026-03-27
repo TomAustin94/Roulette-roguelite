@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="432" height="768" viewBox="0 0 432 768" style="background:#0D120D">
+<defs>
+<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+<path d="M40,0 L0,0 0,40" fill="none" stroke="#ffffff06" stroke-width="0.5"/>
+</pattern>
+</defs>
+<rect width="432" height="768" fill="url(#grid)"/>
+<rect x="0" y="0" width="432" height="3" fill="#E6BF33"/>
+
+<!-- ===== HEADER BAR ===== -->
+<rect x="0" y="3" width="432" height="74" fill="#0A140A"/>
+<rect x="0" y="77" width="432" height="1" fill="#E6BF3328"/>
+
+<text x="20" y="25" font-family="sans-serif" font-size="10" fill="#A09878" letter-spacing="3">FLOOR 1 · ROUND 1 · 5 SPINS</text>
+<text x="20" y="52" font-family="Georgia,serif" font-size="24" font-weight="bold" fill="#E6BF33">The Velvet Room</text>
+<text x="20" y="70" font-family="sans-serif" font-size="10" fill="#706050" font-style="italic">Classic underground casino · Jazz and shadow</text>
+
+<!-- SKIP button -->
+<rect x="360" y="16" width="54" height="28" rx="4" fill="#1A2A1A"/>
+<rect x="360" y="16" width="54" height="28" rx="4" fill="none" stroke="#E6BF3328" stroke-width="1"/>
+<text x="387" y="34" font-family="sans-serif" font-size="11" fill="#706050" text-anchor="middle">SKIP</text>
+
+<!-- ===== DEALER STAGE AREA ===== -->
+<rect x="0" y="78" width="432" height="368" fill="#0A0F0A"/>
+
+<!-- Atmospheric glow behind dealer (spotlight effect) -->
+<ellipse cx="216" cy="310" rx="160" ry="200" fill="#E6BF3306"/>
+<ellipse cx="216" cy="310" rx="100" ry="150" fill="#E6BF3308"/>
+
+<!-- Floor reflection (subtle) -->
+<rect x="0" y="430" width="432" height="16" fill="none" stroke="#E6BF3308" stroke-width="16"/>
+
+<!-- ===== DEALER FIGURE — large, centered ===== -->
+
+<!-- Body / Jacket (dark purple-navy) -->
+<rect x="164" y="345" width="104" height="130" rx="12" fill="#1C0B32"/>
+<!-- Jacket shading -->
+<rect x="164" y="345" width="52" height="130" rx="0" fill="#16082A" opacity="0.4"/>
+<rect x="164" y="345" width="104" height="130" rx="12" fill="none" stroke="#2E1450" stroke-width="1.5"/>
+
+<!-- Shirt / lapels (V-shape of white) -->
+<polygon points="216,357 193,392 216,410 239,392" fill="#F0EAD8"/>
+<!-- Shirt shadow -->
+<polygon points="216,392 193,392 216,410" fill="#D4CCB0" opacity="0.5"/>
+
+<!-- Bow tie (red) -->
+<polygon points="207,388 216,396 225,388 216,380" fill="#9E1010"/>
+<circle cx="216" cy="388" r="2.5" fill="#CC2020"/>
+
+<!-- Jacket buttons -->
+<circle cx="216" cy="418" r="2.5" fill="#E6BF3350"/>
+<circle cx="216" cy="436" r="2.5" fill="#E6BF3350"/>
+<circle cx="216" cy="454" r="2.5" fill="#E6BF3350"/>
+
+<!-- Left arm -->
+<path d="M 164,370 Q 120,400 118,460" stroke="#1C0B32" stroke-width="34" fill="none" stroke-linecap="round"/>
+<path d="M 164,370 Q 120,400 118,460" stroke="#16082A" stroke-width="30" fill="none" stroke-linecap="round" opacity="0.6"/>
+<!-- Right arm (slightly raised — welcoming gesture) -->
+<path d="M 268,370 Q 315,395 318,452" stroke="#1C0B32" stroke-width="34" fill="none" stroke-linecap="round"/>
+
+<!-- Left hand (open, welcoming) -->
+<ellipse cx="118" cy="468" rx="17" ry="13" fill="#C49060"/>
+<!-- Fingers suggestion -->
+<line x1="104" y1="465" x2="99" y2="478" stroke="#B07848" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+<line x1="109" y1="462" x2="106" y2="476" stroke="#B07848" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+<line x1="116" y1="460" x2="115" y2="474" stroke="#B07848" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+<!-- Right hand -->
+<ellipse cx="318" cy="460" rx="17" ry="13" fill="#C49060"/>
+
+<!-- Cufflinks -->
+<rect x="104" y="447" width="30" height="10" rx="3" fill="#1C0B32"/>
+<circle cx="119" cy="452" r="4.5" fill="#E6BF33"/>
+<rect x="306" y="441" width="30" height="10" rx="3" fill="#1C0B32"/>
+<circle cx="321" cy="446" r="4.5" fill="#E6BF33"/>
+
+<!-- Neck -->
+<rect x="203" y="330" width="26" height="20" rx="3" fill="#C49060"/>
+
+<!-- ===== HEAD ===== -->
+<ellipse cx="216" cy="285" rx="44" ry="50" fill="#C49060"/>
+<!-- Head shading (left side darker) -->
+<ellipse cx="204" cy="290" rx="30" ry="38" fill="#A87040" opacity="0.25"/>
+
+<!-- Hair (dark, slicked back) -->
+<path d="M 172,273 Q 178,242 216,237 Q 254,242 260,273 Q 250,255 216,252 Q 182,255 172,273 Z" fill="#1E1008"/>
+<!-- Sideburns -->
+<rect x="172" y="272" width="10" height="32" rx="3" fill="#1E1008"/>
+<rect x="250" y="272" width="10" height="32" rx="3" fill="#1E1008"/>
+<!-- Hair shine -->
+<path d="M 205,245 Q 216,242 228,246" stroke="#3A2818" stroke-width="2" fill="none" opacity="0.5"/>
+
+<!-- ===== GREEN CASINO DEALER VISOR ===== -->
+<path d="M 175,278 Q 216,265 257,278 L 260,296 Q 216,282 172,296 Z" fill="#2A8B2A"/>
+<path d="M 177,292 Q 216,280 255,292 L 255,298 Q 216,287 177,298 Z" fill="#1E6B1E"/>
+<!-- Visor highlight -->
+<path d="M 185,278 Q 216,272 247,278" stroke="#4AAA4A" stroke-width="1.5" fill="none" opacity="0.6"/>
+<!-- Visor shadow on face -->
+<path d="M 177,296 Q 216,290 255,296 L 255,305 Q 216,298 177,305 Z" fill="#90500080" opacity="0.3"/>
+
+<!-- ===== EYES (IDLE — confident, professional) ===== -->
+<ellipse cx="204" cy="312" rx="5.5" ry="6" fill="#1A1014"/>
+<ellipse cx="228" cy="312" rx="5.5" ry="6" fill="#1A1014"/>
+<!-- Eye whites / highlight -->
+<ellipse cx="202" cy="310" rx="2.5" ry="1.8" fill="#FFFFFF30"/>
+<ellipse cx="226" cy="310" rx="2.5" ry="1.8" fill="#FFFFFF30"/>
+<!-- Iris (dark purple, subtle) -->
+<circle cx="204" cy="313" r="3" fill="#2A1030"/>
+<circle cx="228" cy="313" r="3" fill="#2A1030"/>
+<!-- Eyebrows (neutral, well-groomed) -->
+<path d="M 197,302 Q 204,298 211,302" stroke="#1E1008" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+<path d="M 221,302 Q 228,298 235,302" stroke="#1E1008" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+<!-- Nose -->
+<path d="M 212,317 Q 216,324 220,317" stroke="#A07040" stroke-width="1.5" fill="none" opacity="0.5"/>
+<ellipse cx="212" cy="322" rx="2.5" ry="1.5" fill="#90503030"/>
+<ellipse cx="220" cy="322" rx="2.5" ry="1.5" fill="#90503030"/>
+
+<!-- Mouth (professional, slight smile) -->
+<path d="M 207,332 Q 216,340 225,332" stroke="#7A4A3A" stroke-width="2" fill="none" stroke-linecap="round"/>
+<path d="M 208,332 Q 216,337 224,332" fill="#B06040" opacity="0.25"/>
+
+<!-- ===== SPEECH BUBBLE ===== -->
+<!-- Bubble tail (points to dealer head) -->
+<polygon points="245,252 256,270 265,255" fill="#F5F0E4"/>
+<!-- Bubble body -->
+<rect x="36" y="100" width="316" height="142" rx="12" fill="#F5F0E4"/>
+<rect x="38" y="102" width="312" height="138" rx="11" fill="none" stroke="#D4C8A0" stroke-width="1"/>
+<!-- Decorative inner border -->
+<rect x="44" y="108" width="300" height="126" rx="9" fill="none" stroke="#D4C8A060" stroke-width="0.5"/>
+
+<!-- Bubble text — lore-rich intro -->
+<text x="194" y="132" font-family="Georgia,serif" font-size="12.5" fill="#2A1C10" text-anchor="middle" font-style="italic">"Welcome to the Velvet Room.</text>
+<text x="194" y="152" font-family="Georgia,serif" font-size="12.5" fill="#2A1C10" text-anchor="middle" font-style="italic">The jazz never stops here. Neither</text>
+<text x="194" y="172" font-family="Georgia,serif" font-size="12.5" fill="#2A1C10" text-anchor="middle" font-style="italic">does the house advantage. You have</text>
+<text x="194" y="192" font-family="Georgia,serif" font-size="12.5" fill="#2A1C10" text-anchor="middle" font-style="italic">five spins. Make them count."</text>
+<text x="334" y="228" font-family="Georgia,serif" font-size="10" fill="#A09060" text-anchor="end" font-style="italic">— The Dealer</text>
+
+<!-- ===== ROUND OBJECTIVES CARD ===== -->
+<rect x="16" y="460" width="400" height="112" rx="8" fill="#101A10"/>
+<rect x="16" y="460" width="400" height="112" rx="8" fill="none" stroke="#E6BF3330" stroke-width="1"/>
+
+<text x="32" y="481" font-family="sans-serif" font-size="10" fill="#A09878" letter-spacing="3">ROUND OBJECTIVES</text>
+<line x1="32" y1="487" x2="400" y2="487" stroke="#E6BF3820" stroke-width="1"/>
+
+<!-- Target score row -->
+<text x="32" y="508" font-family="Georgia,serif" font-size="14" fill="#C0B090">Target Score</text>
+<text x="400" y="508" font-family="Georgia,serif" font-size="16" font-weight="bold" fill="#E6BF33" text-anchor="end">400 pts</text>
+<!-- Spins row -->
+<text x="32" y="530" font-family="Georgia,serif" font-size="14" fill="#C0B090">Spins Available</text>
+<text x="400" y="530" font-family="Georgia,serif" font-size="16" font-weight="bold" fill="#F0E6D0" text-anchor="end">5</text>
+<!-- Starting chips row -->
+<text x="32" y="552" font-family="Georgia,serif" font-size="14" fill="#C0B090">Current Chips</text>
+<text x="400" y="552" font-family="Georgia,serif" font-size="16" font-weight="bold" fill="#E6BF33" text-anchor="end">♦ 150</text>
+
+<!-- ===== BEGIN ROUND BUTTON ===== -->
+<rect x="16" y="586" width="400" height="62" rx="8" fill="#E6BF33"/>
+<rect x="18" y="588" width="396" height="58" rx="7" fill="none" stroke="#F0D86050" stroke-width="1.5"/>
+<text x="216" y="625" font-family="Georgia,serif" font-size="22" font-weight="bold" fill="#080604" text-anchor="middle" letter-spacing="4">BEGIN ROUND</text>
+
+<!-- ===== FOOTER ===== -->
+<line x1="16" y1="664" x2="416" y2="664" stroke="#E6BF3818" stroke-width="1"/>
+<text x="216" y="684" font-family="sans-serif" font-size="10" fill="#50403070" text-anchor="middle">Floor 1 of 5  ·  Boss round in 2 rounds  ·  Chips: 150</text>
+<text x="216" y="702" font-family="sans-serif" font-size="10" fill="#30201870" text-anchor="middle" font-style="italic">"Someone always wins here. Tonight it isn't you."</text>
+
+<rect x="0" y="764" width="432" height="4" fill="#E6BF3828"/>
+</svg>
