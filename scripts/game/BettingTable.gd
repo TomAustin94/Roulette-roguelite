@@ -242,7 +242,7 @@ func _draw_cell(
 
 	# Chip stack indicator
 	if has_bet:
-		var bet    := _active_bets[key]
+		var bet: Dictionary = _active_bets[key]
 		var amount : int = bet.get("amount", 0)
 		var chip_col := Constants.get_chip_color(selected_chip)
 		var chip_pos := rect.get_center()

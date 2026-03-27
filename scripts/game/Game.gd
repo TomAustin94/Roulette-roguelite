@@ -182,7 +182,7 @@ func _select_chip(index: int) -> void:
 		var btn := _chip_bar.get_child(i) as Button
 		if not btn:
 			continue
-		var is_selected := (btn.get_meta("chip_value", -1) == _selected_chip)
+		var is_selected: bool = (btn.get_meta("chip_value", -1) == _selected_chip)
 		var style := btn.get_theme_stylebox("normal") as StyleBoxFlat
 		if style:
 			style.border_color       = (Constants.COLOR_HIGHLIGHT if is_selected else Constants.CHIP_COLORS[i].lightened(0.3))
@@ -216,7 +216,7 @@ func _on_bet_placed(bet_type: int, bet_data: Dictionary, amount: int) -> void:
 
 func _pick_winning_number() -> int:
 	var pool := Constants.WHEEL_NUMBERS.duplicate()
-	var boss_id := GameManager.active_boss_rule.get("id", "")
+	var boss_id: String = GameManager.active_boss_rule.get("id", "")
 	if boss_id == "no_green":
 		pool = pool.filter(func(n: int) -> bool: return n != 0)
 	pool.shuffle()

@@ -163,7 +163,7 @@ func _build_mod_card(mod: Dictionary) -> Panel:
 	right_vbox.add_child(cost_lbl)
 
 	var can_afford := GameManager.chips >= cost
-	var already_owned := ModManager.has_mod(mod.get("id", "")) and mod.get("unique", false)
+	var already_owned: bool = ModManager.has_mod(mod.get("id", "")) and mod.get("unique", false)
 	var buy_btn := _make_button(
 		"BUY" if (can_afford and not already_owned) else ("OWNED" if already_owned else "CAN'T"),
 		Constants.COLOR_GOLD if (can_afford and not already_owned) else Color(0.3, 0.3, 0.3),

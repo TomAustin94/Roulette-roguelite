@@ -35,7 +35,7 @@ func _ready() -> void:
 	resized.connect(_recalculate_layout)
 
 func _recalculate_layout() -> void:
-	var side   := min(size.x, size.y)
+	var side: float = minf(size.x, size.y)
 	_radius       = side * 0.46
 	_inner_radius = side * 0.10
 	_num_radius   = side * 0.36

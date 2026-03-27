@@ -315,7 +315,7 @@ func _calculate_winnings(winning_number: int) -> int:
 	for bet in current_bets:
 		var btype := bet.type as Constants.BetType
 		if Constants.is_number_in_bet(winning_number, btype, bet.data):
-			var payout := Constants.BET_PAYOUTS[btype]
+			var payout: int = Constants.BET_PAYOUTS[btype]
 			# Apply mod payout multipliers
 			payout = ModManager.apply_payout_multiplier(btype, payout)
 			# Boss rule: odd numbers pay half

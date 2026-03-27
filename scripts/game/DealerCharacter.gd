@@ -178,7 +178,7 @@ func _draw_speech_bubble(bob: Vector2, sc: float) -> void:
 # ─── Drawing Helpers ─────────────────────────────────────────────────────────
 
 func _fill_rounded_rect(rect: Rect2, color: Color, radius: float) -> void:
-	var r  := min(radius, rect.size.x * 0.5, rect.size.y * 0.5)
+	var r: float = minf(radius, minf(rect.size.x * 0.5, rect.size.y * 0.5))
 	var s  := 6
 	var pts := PackedVector2Array()
 	var corners := [
@@ -187,10 +187,10 @@ func _fill_rounded_rect(rect: Rect2, color: Color, radius: float) -> void:
 		Vector2(rect.position.x + rect.size.x - r, rect.position.y + rect.size.y - r),
 		Vector2(rect.position.x + r,              rect.position.y + rect.size.y - r),
 	]
-	var start_angles := [PI, -PI * 0.5, 0.0, PI * 0.5]
+	var start_angles: Array[float] = [PI, -PI * 0.5, 0.0, PI * 0.5]
 	for i in 4:
 		for j in range(s + 1):
-			var a := start_angles[i] + (PI * 0.5) * j / s
+			var a: float = start_angles[i] + (PI * 0.5) * j / s
 			pts.append(corners[i] + Vector2(cos(a), sin(a)) * r)
 	var colors := PackedColorArray()
 	for _i in pts.size():
