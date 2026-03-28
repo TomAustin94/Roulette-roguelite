@@ -47,13 +47,13 @@ func _on_resized() -> void:
 func _recalculate_layout() -> void:
 	_cell_w = (size.x - _pad * (COLS + 1)) / (COLS + 0.5)  # +0.5 for outside col
 	_cell_h = 0.0
-	_zero_h = 44.0
-	_out_h  = 44.0
-	_col_h  = 44.0
+	_zero_h = 60.0
+	_out_h  = 60.0
+	_col_h  = 60.0
 
 	# Fill available height
 	var remaining := size.y - _zero_h - _out_h - _col_h - _pad * (ROWS + 4)
-	_cell_h = max(30.0, remaining / ROWS)
+	_cell_h = max(40.0, remaining / ROWS)
 
 	_rebuild_hit_regions()
 	queue_redraw()
@@ -234,7 +234,7 @@ func _draw_cell(
 
 	# Label
 	var font := ThemeDB.fallback_font
-	var fsize := 13
+	var fsize := 20
 	var tsize := font.get_string_size(label, HORIZONTAL_ALIGNMENT_LEFT, -1, fsize)
 	var tpos  := rect.get_center() - tsize * 0.5 + Vector2(0, tsize.y * 0.3)
 	draw_string(font, tpos, label, HORIZONTAL_ALIGNMENT_LEFT, -1, fsize,
@@ -246,12 +246,12 @@ func _draw_cell(
 		var amount : int = bet.get("amount", 0)
 		var chip_col := Constants.get_chip_color(selected_chip)
 		var chip_pos := rect.get_center()
-		draw_circle(chip_pos, 13.0, chip_col)
-		draw_arc(chip_pos, 13.0, 0.0, TAU, 16, Color(0.0,0.0,0.0,0.4), 1.5)
+		draw_circle(chip_pos, 16.0, chip_col)
+		draw_arc(chip_pos, 16.0, 0.0, TAU, 16, Color(0.0,0.0,0.0,0.4), 1.5)
 		var amt_str  := str(amount)
-		var asize    := font.get_string_size(amt_str, HORIZONTAL_ALIGNMENT_LEFT, -1, 11)
+		var asize    := font.get_string_size(amt_str, HORIZONTAL_ALIGNMENT_LEFT, -1, 15)
 		draw_string(font, chip_pos - asize * 0.5 + Vector2(0, asize.y * 0.3),
-					amt_str, HORIZONTAL_ALIGNMENT_LEFT, -1, 11, Color.BLACK)
+					amt_str, HORIZONTAL_ALIGNMENT_LEFT, -1, 15, Color.BLACK)
 
 # ─── Helpers ──────────────────────────────────────────────────────────────────
 

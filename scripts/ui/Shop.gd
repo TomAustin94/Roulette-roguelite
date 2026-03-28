@@ -197,7 +197,7 @@ func _build_mod_card(mod: Dictionary) -> Panel:
 	return panel
 
 func _refresh_chips_label() -> void:
-	var lbl := find_child("ChipsLabel") as Label
+	var lbl := find_child("ChipsLabel", true, false) as Label
 	if lbl:
 		lbl.text = "♦ %d chips" % GameManager.chips
 

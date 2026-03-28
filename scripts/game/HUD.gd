@@ -40,13 +40,13 @@ func _build_ui() -> void:
 	top_row.add_theme_constant_override("separation", 0)
 	top_margin.add_child(top_row)
 
-	_floor_label = _make_label("Floor 1 · Round 1", 26, true)
+	_floor_label = _make_label("Floor 1 · Round 1", 36, true)
 	_floor_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	_floor_label.horizontal_alignment  = HORIZONTAL_ALIGNMENT_LEFT
 	_floor_label.clip_text = true
 	top_row.add_child(_floor_label)
 
-	_chips_label = _make_label("♦ 150", 30, true)
+	_chips_label = _make_label("♦ 150", 42, true)
 	_chips_label.size_flags_horizontal = Control.SIZE_SHRINK_END
 	_chips_label.add_theme_color_override("font_color", Constants.COLOR_GOLD)
 	top_row.add_child(_chips_label)
@@ -54,8 +54,8 @@ func _build_ui() -> void:
 	# Pause button (small, right of chips)
 	var pause_btn := Button.new()
 	pause_btn.text = "❙❙"
-	pause_btn.custom_minimum_size = Vector2(70, 50)
-	pause_btn.add_theme_font_size_override("font_size", 22)
+	pause_btn.custom_minimum_size = Vector2(80, 60)
+	pause_btn.add_theme_font_size_override("font_size", 30)
 	pause_btn.add_theme_color_override("font_color", Color(0.62, 0.57, 0.44))
 	var ps := StyleBoxFlat.new()
 	ps.bg_color = Color(0.06, 0.10, 0.06, 0.80)
@@ -89,18 +89,18 @@ func _build_ui() -> void:
 	bar_row.add_theme_constant_override("separation", 8)
 	bar_vbox.add_child(bar_row)
 
-	_target_label = _make_label("0 / 400", 22)
+	_target_label = _make_label("0 / 400", 32)
 	_target_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	_target_label.horizontal_alignment  = HORIZONTAL_ALIGNMENT_LEFT
 	bar_row.add_child(_target_label)
 
-	_spins_label = _make_label("⟳ 5 spins", 22)
+	_spins_label = _make_label("⟳ 5 spins", 32)
 	_spins_label.size_flags_horizontal = Control.SIZE_SHRINK_END
 	_spins_label.horizontal_alignment  = HORIZONTAL_ALIGNMENT_RIGHT
 	bar_row.add_child(_spins_label)
 
 	_score_bar = ProgressBar.new()
-	_score_bar.custom_minimum_size = Vector2(0, 24)
+	_score_bar.custom_minimum_size = Vector2(0, 32)
 	_score_bar.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	_score_bar.min_value = 0
 	_score_bar.max_value = 400
@@ -142,7 +142,7 @@ func _build_ui() -> void:
 	_boss_banner.add_theme_stylebox_override("panel", banner_style)
 	root.add_child(_boss_banner)
 
-	var boss_label := _make_label("", 22)
+	var boss_label := _make_label("", 32)
 	boss_label.name = "BossLabel"
 	boss_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	boss_label.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
@@ -150,7 +150,7 @@ func _build_ui() -> void:
 	_boss_banner.add_child(boss_label)
 
 	# ── Mod notification (floats at centre, alpha-fades) ─────────────────────
-	_mod_notif = _make_label("", 26, true)
+	_mod_notif = _make_label("", 38, true)
 	_mod_notif.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	_mod_notif.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	_mod_notif.add_theme_color_override("font_color", Constants.COLOR_HIGHLIGHT)
@@ -204,7 +204,7 @@ func _on_round_started(info: Dictionary) -> void:
 		_boss_banner.custom_minimum_size.y = 0
 	else:
 		_boss_banner.visible = true
-		_boss_banner.custom_minimum_size.y = 36
+		_boss_banner.custom_minimum_size.y = 52
 		var lbl := _boss_banner.get_node_or_null("BossLabel") as Label
 		if lbl:
 			lbl.text = "☠ %s: %s" % [boss_rule.get("name", ""), boss_rule.get("description", "")]
