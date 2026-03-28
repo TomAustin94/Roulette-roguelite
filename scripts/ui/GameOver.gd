@@ -42,7 +42,7 @@ func _build_ui(won: bool) -> void:
 	var icon := Label.new()
 	icon.text = "★" if won else "✦"
 	icon.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	icon.add_theme_font_size_override("font_size", 72)
+	icon.add_theme_font_size_override("font_size", 100)
 	icon.add_theme_color_override("font_color", Constants.COLOR_GOLD if won else Color(0.65, 0.10, 0.10))
 	vbox.add_child(icon)
 
@@ -50,7 +50,7 @@ func _build_ui(won: bool) -> void:
 	var headline := Label.new()
 	headline.text = "YOU'RE FREE." if won else "THE HOUSE WINS."
 	headline.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	headline.add_theme_font_size_override("font_size", 44)
+	headline.add_theme_font_size_override("font_size", 60)
 	headline.add_theme_color_override("font_color", Constants.COLOR_GOLD if won else Constants.COLOR_RED.lightened(0.2))
 	headline.add_theme_color_override("font_shadow_color", Color(0, 0, 0, 0.8))
 	headline.add_theme_constant_override("shadow_offset_x", 3)
@@ -62,7 +62,7 @@ func _build_ui(won: bool) -> void:
 		var badge := Label.new()
 		badge.text = "★  NEW BEST SCORE!"
 		badge.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-		badge.add_theme_font_size_override("font_size", 18)
+		badge.add_theme_font_size_override("font_size", 28)
 		badge.add_theme_color_override("font_color", Constants.COLOR_HIGHLIGHT)
 		vbox.add_child(badge)
 
@@ -81,7 +81,7 @@ func _build_ui(won: bool) -> void:
 	var flavor := Label.new()
 	flavor.text = quotes[randi() % quotes.size()]
 	flavor.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	flavor.add_theme_font_size_override("font_size", 16)
+	flavor.add_theme_font_size_override("font_size", 26)
 	flavor.add_theme_color_override("font_color", Color(0.68, 0.63, 0.52))
 	flavor.autowrap_mode = TextServer.AUTOWRAP_WORD
 	vbox.add_child(flavor)
@@ -133,7 +133,7 @@ func _make_floor_dots() -> Control:
 	var floors_cleared: int = GameManager.run_stats.get("floors_cleared", 0)
 	for i in 5:
 		var dot := ColorRect.new()
-		dot.custom_minimum_size = Vector2(14, 14)
+		dot.custom_minimum_size = Vector2(22, 22)
 		dot.color = Constants.COLOR_GOLD if i < floors_cleared else Color(0.22, 0.18, 0.12)
 		container.add_child(dot)
 
@@ -149,14 +149,14 @@ func _add_stat(parent: VBoxContainer, label: String, value: String) -> void:
 	var k := Label.new()
 	k.text = label
 	k.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	k.add_theme_font_size_override("font_size", 16)
+	k.add_theme_font_size_override("font_size", 26)
 	k.add_theme_color_override("font_color", Color(0.62, 0.57, 0.46))
 	hbox.add_child(k)
 
 	var v := Label.new()
 	v.text = value
 	v.size_flags_horizontal = Control.SIZE_SHRINK_END
-	v.add_theme_font_size_override("font_size", 16)
+	v.add_theme_font_size_override("font_size", 26)
 	v.add_theme_color_override("font_color", Constants.COLOR_TEXT)
 	hbox.add_child(v)
 
@@ -182,9 +182,9 @@ func _on_main_menu() -> void:
 func _make_button(label: String, bg: Color, text_color: Color) -> Button:
 	var btn := Button.new()
 	btn.text = label
-	btn.custom_minimum_size = Vector2(0, 68)
+	btn.custom_minimum_size = Vector2(0, 90)
 	btn.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	btn.add_theme_font_size_override("font_size", 22)
+	btn.add_theme_font_size_override("font_size", 34)
 	btn.add_theme_color_override("font_color", text_color)
 
 	var style := StyleBoxFlat.new()

@@ -53,7 +53,7 @@ func _build_ui() -> void:
 	# ── SKIP button (top-right) ───────────────────────────────────────────────
 	var skip_btn := Button.new()
 	skip_btn.text = "SKIP ›"
-	skip_btn.custom_minimum_size = Vector2(140, 52)
+	skip_btn.custom_minimum_size = Vector2(180, 70)
 	skip_btn.anchor_left   = 1.0
 	skip_btn.anchor_right  = 1.0
 	skip_btn.anchor_top    = 0.0
@@ -62,7 +62,7 @@ func _build_ui() -> void:
 	skip_btn.offset_top    = 8.0
 	skip_btn.offset_right  = -10.0
 	skip_btn.offset_bottom = 60.0
-	skip_btn.add_theme_font_size_override("font_size", 15)
+	skip_btn.add_theme_font_size_override("font_size", 24)
 	skip_btn.add_theme_color_override("font_color", Color(0.55, 0.50, 0.38))
 	var skip_style := StyleBoxFlat.new()
 	skip_style.bg_color = Color(0, 0, 0, 0)
@@ -83,7 +83,7 @@ func _build_ui() -> void:
 	_panel_lbl.offset_right = 40.0
 	_panel_lbl.offset_bottom = 56.0
 	_panel_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	_panel_lbl.add_theme_font_size_override("font_size", 13)
+	_panel_lbl.add_theme_font_size_override("font_size", 22)
 	_panel_lbl.add_theme_color_override("font_color", Color(0.42, 0.38, 0.28))
 	add_child(_panel_lbl)
 
@@ -105,7 +105,7 @@ func _build_ui() -> void:
 	var diamond := Label.new()
 	diamond.text = "✦"
 	diamond.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	diamond.add_theme_font_size_override("font_size", 26)
+	diamond.add_theme_font_size_override("font_size", 44)
 	diamond.add_theme_color_override("font_color",
 		Color(Constants.COLOR_GOLD.r, Constants.COLOR_GOLD.g, Constants.COLOR_GOLD.b, 0.45))
 	vbox.add_child(diamond)
@@ -113,7 +113,7 @@ func _build_ui() -> void:
 	# Title
 	_title_lbl = Label.new()
 	_title_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	_title_lbl.add_theme_font_size_override("font_size", 34)
+	_title_lbl.add_theme_font_size_override("font_size", 52)
 	_title_lbl.add_theme_color_override("font_color", Constants.COLOR_GOLD)
 	_title_lbl.add_theme_color_override("font_shadow_color", Color(0, 0, 0, 0.6))
 	_title_lbl.add_theme_constant_override("shadow_offset_x", 2)
@@ -128,7 +128,7 @@ func _build_ui() -> void:
 	# Body
 	_body_lbl = Label.new()
 	_body_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	_body_lbl.add_theme_font_size_override("font_size", 20)
+	_body_lbl.add_theme_font_size_override("font_size", 30)
 	_body_lbl.add_theme_color_override("font_color", Color(0.82, 0.78, 0.68))
 	_body_lbl.autowrap_mode = TextServer.AUTOWRAP_WORD
 	_body_lbl.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -136,7 +136,7 @@ func _build_ui() -> void:
 
 	# ── NEXT button (pinned to bottom) ────────────────────────────────────────
 	_next_btn = Button.new()
-	_next_btn.custom_minimum_size = Vector2(0, 80)
+	_next_btn.custom_minimum_size = Vector2(0, 100)
 	_next_btn.anchor_left   = 0.0
 	_next_btn.anchor_right  = 1.0
 	_next_btn.anchor_top    = 1.0
@@ -145,7 +145,7 @@ func _build_ui() -> void:
 	_next_btn.offset_right  = -60.0
 	_next_btn.offset_top    = -110.0
 	_next_btn.offset_bottom = -30.0
-	_next_btn.add_theme_font_size_override("font_size", 24)
+	_next_btn.add_theme_font_size_override("font_size", 36)
 	_next_btn.add_theme_color_override("font_color", Color.BLACK)
 
 	var btn_style := StyleBoxFlat.new()

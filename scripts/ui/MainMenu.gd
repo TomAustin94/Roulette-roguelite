@@ -44,7 +44,7 @@ func _build_ui() -> void:
 	var title := Label.new()
 	title.text = "THE DEVIL'S DEAL"
 	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	title.add_theme_font_size_override("font_size", 52)
+	title.add_theme_font_size_override("font_size", 72)
 	title.add_theme_color_override("font_color", Constants.COLOR_GOLD)
 	title.add_theme_color_override("font_shadow_color", Color(0, 0, 0, 0.85))
 	title.add_theme_constant_override("shadow_offset_x", 3)
@@ -55,7 +55,7 @@ func _build_ui() -> void:
 	var sub := Label.new()
 	sub.text = "ROULETTE  ·  ROGUELITE"
 	sub.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	sub.add_theme_font_size_override("font_size", 14)
+	sub.add_theme_font_size_override("font_size", 22)
 	sub.add_theme_color_override("font_color", Color(0.65, 0.60, 0.47))
 	vbox.add_child(sub)
 
@@ -78,7 +78,7 @@ func _build_ui() -> void:
 	var footer := Label.new()
 	footer.text = "\"Five floors. One wheel. No mercy.\""
 	footer.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	footer.add_theme_font_size_override("font_size", 13)
+	footer.add_theme_font_size_override("font_size", 20)
 	footer.add_theme_color_override("font_color", Color(0.42, 0.38, 0.28))
 	vbox.add_child(footer)
 
@@ -90,7 +90,7 @@ func _build_continue_section(vbox: VBoxContainer) -> void:
 	var wb := Label.new()
 	wb.text = "WELCOME BACK"
 	wb.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	wb.add_theme_font_size_override("font_size", 14)
+	wb.add_theme_font_size_override("font_size", 22)
 	wb.add_theme_color_override("font_color", Color(0.65, 0.60, 0.47))
 	vbox.add_child(wb)
 
@@ -112,7 +112,7 @@ func _build_new_run_section(vbox: VBoxContainer) -> void:
 	var lore := Label.new()
 	lore.text = "You made a deal. The Devil dealt.\nWin back your soul — one spin at a time."
 	lore.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	lore.add_theme_font_size_override("font_size", 16)
+	lore.add_theme_font_size_override("font_size", 26)
 	lore.add_theme_color_override("font_color", Color(0.68, 0.63, 0.52))
 	lore.autowrap_mode = TextServer.AUTOWRAP_WORD
 	lore.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -134,7 +134,7 @@ func _build_new_run_section(vbox: VBoxContainer) -> void:
 
 func _make_save_card(preview: Dictionary) -> Panel:
 	var panel := Panel.new()
-	panel.custom_minimum_size = Vector2(0, 90)
+	panel.custom_minimum_size = Vector2(0, 120)
 	panel.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 
 	var style := StyleBoxFlat.new()
@@ -165,19 +165,19 @@ func _make_save_card(preview: Dictionary) -> Panel:
 
 	var floor_lbl := Label.new()
 	floor_lbl.text = "Floor %d  ·  Round %d" % [preview.get("floor_num", 1), preview.get("round_num", 1)]
-	floor_lbl.add_theme_font_size_override("font_size", 18)
+	floor_lbl.add_theme_font_size_override("font_size", 26)
 	floor_lbl.add_theme_color_override("font_color", Constants.COLOR_TEXT)
 	left_vb.add_child(floor_lbl)
 
 	var score_lbl := Label.new()
 	score_lbl.text = "Score: %d" % preview.get("total_score", 0)
-	score_lbl.add_theme_font_size_override("font_size", 13)
+	score_lbl.add_theme_font_size_override("font_size", 20)
 	score_lbl.add_theme_color_override("font_color", Color(0.65, 0.60, 0.47))
 	left_vb.add_child(score_lbl)
 
 	var chips_lbl := Label.new()
 	chips_lbl.text = "♦ %d" % preview.get("chips", 0)
-	chips_lbl.add_theme_font_size_override("font_size", 22)
+	chips_lbl.add_theme_font_size_override("font_size", 32)
 	chips_lbl.add_theme_color_override("font_color", Constants.COLOR_GOLD)
 	chips_lbl.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	hbox.add_child(chips_lbl)
@@ -194,7 +194,7 @@ func _make_floor_dots() -> Control:
 
 	for i in 5:
 		var dot := ColorRect.new()
-		dot.custom_minimum_size = Vector2(14, 14)
+		dot.custom_minimum_size = Vector2(22, 22)
 		# All dots are dim on the main menu (no run in progress displayed here)
 		dot.color = Color(0.28, 0.24, 0.16)
 		container.add_child(dot)
@@ -283,9 +283,9 @@ func _on_high_scores() -> void:
 func _make_button(label: String, bg_color: Color, text_color: Color) -> Button:
 	var btn := Button.new()
 	btn.text = label
-	btn.custom_minimum_size = Vector2(0, 72)
+	btn.custom_minimum_size = Vector2(0, 96)
 	btn.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	btn.add_theme_font_size_override("font_size", 24)
+	btn.add_theme_font_size_override("font_size", 34)
 	btn.add_theme_color_override("font_color", text_color)
 
 	var style := StyleBoxFlat.new()

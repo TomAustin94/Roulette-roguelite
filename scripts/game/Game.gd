@@ -30,16 +30,16 @@ var _selected_chip: int  = 5
 var _paused:        bool = false
 
 # ─── Layout constants ─────────────────────────────────────────────────────────
-const HUD_HEIGHT   := 110
+const HUD_HEIGHT   := 160
 const WHEEL_HEIGHT := 310
-const BTN_BAR_H    := 118
+const BTN_BAR_H    := 160
 
 # ─── Lifecycle ────────────────────────────────────────────────────────────────
 
 func _ready() -> void:
 	_build_scene()
 	_connect_signals()
-	call_deferred("_sync_initial_state")
+	_sync_initial_state()
 
 func _sync_initial_state() -> void:
 	match GameManager.state:
@@ -125,7 +125,7 @@ func _build_scene() -> void:
 	_chip_bar = HBoxContainer.new()
 	_chip_bar.alignment = BoxContainer.ALIGNMENT_CENTER
 	_chip_bar.add_theme_constant_override("separation", 6)
-	_chip_bar.custom_minimum_size.y = 56
+	_chip_bar.custom_minimum_size.y = 76
 	_chip_bar.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	btn_bar.add_child(_chip_bar)
 
@@ -138,7 +138,7 @@ func _build_scene() -> void:
 	var action_row := HBoxContainer.new()
 	action_row.alignment = BoxContainer.ALIGNMENT_CENTER
 	action_row.add_theme_constant_override("separation", 10)
-	action_row.custom_minimum_size.y = 58
+	action_row.custom_minimum_size.y = 78
 	action_row.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	btn_bar.add_child(action_row)
 
@@ -193,14 +193,14 @@ func _build_dealer_intro_panel() -> Control:
 	# Floor / round header
 	_di_floor_lbl = Label.new()
 	_di_floor_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	_di_floor_lbl.add_theme_font_size_override("font_size", 15)
+	_di_floor_lbl.add_theme_font_size_override("font_size", 24)
 	_di_floor_lbl.add_theme_color_override("font_color", Color(0.60, 0.55, 0.42))
 	vbox.add_child(_di_floor_lbl)
 
 	# Floor name (large)
 	_di_name_lbl = Label.new()
 	_di_name_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	_di_name_lbl.add_theme_font_size_override("font_size", 42)
+	_di_name_lbl.add_theme_font_size_override("font_size", 58)
 	_di_name_lbl.add_theme_color_override("font_color", Constants.COLOR_GOLD)
 	_di_name_lbl.add_theme_color_override("font_shadow_color", Color(0, 0, 0, 0.75))
 	_di_name_lbl.add_theme_constant_override("shadow_offset_x", 3)
@@ -232,7 +232,7 @@ func _build_dealer_intro_panel() -> Control:
 	_di_boss_lbl = Label.new()
 	_di_boss_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	_di_boss_lbl.vertical_alignment   = VERTICAL_ALIGNMENT_CENTER
-	_di_boss_lbl.add_theme_font_size_override("font_size", 14)
+	_di_boss_lbl.add_theme_font_size_override("font_size", 22)
 	_di_boss_lbl.add_theme_color_override("font_color", Color(1.0, 0.68, 0.68))
 	_di_boss_lbl.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	_di_boss_lbl.autowrap_mode = TextServer.AUTOWRAP_WORD
@@ -243,8 +243,8 @@ func _build_dealer_intro_panel() -> Control:
 	var begin_btn := _make_action_button("BEGIN ROUND", Constants.COLOR_GOLD)
 	begin_btn.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	begin_btn.add_theme_color_override("font_color", Color.BLACK)
-	begin_btn.add_theme_font_size_override("font_size", 28)
-	begin_btn.custom_minimum_size = Vector2(0, 88)
+	begin_btn.add_theme_font_size_override("font_size", 40)
+	begin_btn.custom_minimum_size = Vector2(0, 110)
 	begin_btn.pressed.connect(_on_begin_round_pressed)
 	vbox.add_child(begin_btn)
 
@@ -252,7 +252,7 @@ func _build_dealer_intro_panel() -> Control:
 
 func _make_dealer_quote_panel() -> Panel:
 	var panel := Panel.new()
-	panel.custom_minimum_size = Vector2(0, 80)
+	panel.custom_minimum_size = Vector2(0, 110)
 	panel.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	var style := StyleBoxFlat.new()
 	style.bg_color = Color(0.94, 0.91, 0.85)
@@ -275,7 +275,7 @@ func _make_dealer_quote_panel() -> Panel:
 	var quote_lbl := Label.new()
 	quote_lbl.name = "QuoteLbl"
 	quote_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	quote_lbl.add_theme_font_size_override("font_size", 16)
+	quote_lbl.add_theme_font_size_override("font_size", 26)
 	quote_lbl.add_theme_color_override("font_color", Color(0.18, 0.10, 0.06))
 	quote_lbl.autowrap_mode = TextServer.AUTOWRAP_WORD
 	quote_lbl.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -284,7 +284,7 @@ func _make_dealer_quote_panel() -> Panel:
 	var attr_lbl := Label.new()
 	attr_lbl.text = "— The Dealer"
 	attr_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
-	attr_lbl.add_theme_font_size_override("font_size", 12)
+	attr_lbl.add_theme_font_size_override("font_size", 20)
 	attr_lbl.add_theme_color_override("font_color", Color(0.55, 0.40, 0.28))
 	vb.add_child(attr_lbl)
 
@@ -292,7 +292,7 @@ func _make_dealer_quote_panel() -> Panel:
 
 func _make_objectives_card() -> Panel:
 	var card := Panel.new()
-	card.custom_minimum_size = Vector2(0, 100)
+	card.custom_minimum_size = Vector2(0, 140)
 	card.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	var style := StyleBoxFlat.new()
 	style.bg_color = Color(0.06, 0.10, 0.06, 0.95)
@@ -328,7 +328,7 @@ func _make_objectives_card() -> Panel:
 
 		var h := Label.new()
 		h.text = stat[0]
-		h.add_theme_font_size_override("font_size", 11)
+		h.add_theme_font_size_override("font_size", 18)
 		h.add_theme_color_override("font_color", Color(0.58, 0.53, 0.40))
 		h.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		col.add_child(h)
@@ -336,7 +336,7 @@ func _make_objectives_card() -> Panel:
 		var v := Label.new()
 		v.name = stat[1]
 		v.text = stat[2]
-		v.add_theme_font_size_override("font_size", 30)
+		v.add_theme_font_size_override("font_size", 42)
 		v.add_theme_color_override("font_color", stat[3])
 		v.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		col.add_child(v)
@@ -437,7 +437,7 @@ func _build_pause_panel() -> Control:
 	var title := Label.new()
 	title.text = "PAUSED"
 	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	title.add_theme_font_size_override("font_size", 38)
+	title.add_theme_font_size_override("font_size", 52)
 	title.add_theme_color_override("font_color", Constants.COLOR_GOLD)
 	vbox.add_child(title)
 
@@ -452,8 +452,8 @@ func _build_pause_panel() -> Control:
 	# RESUME (gold)
 	var resume_btn := _make_action_button("RESUME", Constants.COLOR_GOLD)
 	resume_btn.add_theme_color_override("font_color", Color.BLACK)
-	resume_btn.add_theme_font_size_override("font_size", 24)
-	resume_btn.custom_minimum_size = Vector2(0, 78)
+	resume_btn.add_theme_font_size_override("font_size", 34)
+	resume_btn.custom_minimum_size = Vector2(0, 96)
 	resume_btn.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	resume_btn.pressed.connect(_on_resume_pressed)
 	vbox.add_child(resume_btn)
@@ -461,8 +461,8 @@ func _build_pause_panel() -> Control:
 	# SAVE & QUIT
 	var sq_btn := _make_action_button("SAVE & QUIT", Color(0.10, 0.16, 0.10))
 	sq_btn.add_theme_color_override("font_color", Constants.COLOR_TEXT)
-	sq_btn.add_theme_font_size_override("font_size", 20)
-	sq_btn.custom_minimum_size = Vector2(0, 64)
+	sq_btn.add_theme_font_size_override("font_size", 28)
+	sq_btn.custom_minimum_size = Vector2(0, 82)
 	sq_btn.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	sq_btn.pressed.connect(_on_save_quit_pressed)
 	vbox.add_child(sq_btn)
@@ -470,15 +470,15 @@ func _build_pause_panel() -> Control:
 	var sq_hint := Label.new()
 	sq_hint.text = "Progress saved — resume any time"
 	sq_hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	sq_hint.add_theme_font_size_override("font_size", 12)
+	sq_hint.add_theme_font_size_override("font_size", 20)
 	sq_hint.add_theme_color_override("font_color", Color(0.48, 0.44, 0.34))
 	vbox.add_child(sq_hint)
 
 	# START NEW RUN (danger)
 	var nr_btn := _make_action_button("START NEW RUN", Color(0.28, 0.05, 0.05))
 	nr_btn.add_theme_color_override("font_color", Constants.COLOR_TEXT)
-	nr_btn.add_theme_font_size_override("font_size", 18)
-	nr_btn.custom_minimum_size = Vector2(0, 58)
+	nr_btn.add_theme_font_size_override("font_size", 26)
+	nr_btn.custom_minimum_size = Vector2(0, 74)
 	nr_btn.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	nr_btn.pressed.connect(_on_new_run_from_pause)
 	vbox.add_child(nr_btn)
@@ -486,7 +486,7 @@ func _build_pause_panel() -> Control:
 	var warn := Label.new()
 	warn.text = "Warning: current run will be lost"
 	warn.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	warn.add_theme_font_size_override("font_size", 11)
+	warn.add_theme_font_size_override("font_size", 20)
 	warn.add_theme_color_override("font_color", Color(0.68, 0.28, 0.28))
 	vbox.add_child(warn)
 
@@ -525,13 +525,13 @@ func _make_pause_snapshot() -> Panel:
 		spins_used, GameManager.SPINS_PER_ROUND
 	]
 	info.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	info.add_theme_font_size_override("font_size", 13)
+	info.add_theme_font_size_override("font_size", 22)
 	info.add_theme_color_override("font_color", Color(0.65, 0.60, 0.47))
 	row.add_child(info)
 
 	var chips := Label.new()
 	chips.text = "♦ %d" % GameManager.chips
-	chips.add_theme_font_size_override("font_size", 18)
+	chips.add_theme_font_size_override("font_size", 28)
 	chips.add_theme_color_override("font_color", Constants.COLOR_GOLD)
 	row.add_child(chips)
 
@@ -576,8 +576,8 @@ func _make_pause_snapshot() -> Panel:
 func _make_chip_button(value: int, color: Color) -> Button:
 	var btn := Button.new()
 	btn.text = str(value)
-	btn.custom_minimum_size = Vector2(0, 52)
-	btn.add_theme_font_size_override("font_size", 15)
+	btn.custom_minimum_size = Vector2(0, 70)
+	btn.add_theme_font_size_override("font_size", 24)
 
 	var normal := StyleBoxFlat.new()
 	normal.bg_color = color.darkened(0.25)
@@ -736,8 +736,8 @@ func _transition_to(path: String) -> void:
 func _make_action_button(label: String, color: Color) -> Button:
 	var btn := Button.new()
 	btn.text = label
-	btn.custom_minimum_size = Vector2(0, 54)
-	btn.add_theme_font_size_override("font_size", 20)
+	btn.custom_minimum_size = Vector2(0, 72)
+	btn.add_theme_font_size_override("font_size", 30)
 
 	var style := StyleBoxFlat.new()
 	style.bg_color = color.darkened(0.15)

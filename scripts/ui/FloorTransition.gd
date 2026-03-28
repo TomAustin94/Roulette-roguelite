@@ -29,7 +29,7 @@ func _build_ui() -> void:
 	var floor_num_lbl := Label.new()
 	floor_num_lbl.text = "FLOOR %d" % GameManager.floor_num
 	floor_num_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	floor_num_lbl.add_theme_font_size_override("font_size", 20)
+	floor_num_lbl.add_theme_font_size_override("font_size", 30)
 	floor_num_lbl.add_theme_color_override("font_color", Color(0.55, 0.50, 0.40))
 	floor_num_lbl.modulate.a = 0.0
 	floor_num_lbl.name = "FloorNumLbl"
@@ -39,7 +39,7 @@ func _build_ui() -> void:
 	var name_lbl := Label.new()
 	name_lbl.text = floor_data.get("name", "Unknown Floor")
 	name_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	name_lbl.add_theme_font_size_override("font_size", 48)
+	name_lbl.add_theme_font_size_override("font_size", 64)
 	name_lbl.add_theme_color_override("font_color", Constants.COLOR_GOLD)
 	name_lbl.add_theme_color_override("font_shadow_color", Color(0,0,0,0.8))
 	name_lbl.add_theme_constant_override("shadow_offset_x", 3)
@@ -52,7 +52,7 @@ func _build_ui() -> void:
 	var sub_lbl := Label.new()
 	sub_lbl.text = floor_data.get("subtitle", "")
 	sub_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	sub_lbl.add_theme_font_size_override("font_size", 18)
+	sub_lbl.add_theme_font_size_override("font_size", 28)
 	sub_lbl.add_theme_color_override("font_color", Color(0.72, 0.68, 0.58))
 	sub_lbl.autowrap_mode = TextServer.AUTOWRAP_WORD
 	sub_lbl.modulate.a = 0.0
@@ -69,7 +69,7 @@ func _build_ui() -> void:
 	var desc_lbl := Label.new()
 	desc_lbl.text = floor_data.get("description", "")
 	desc_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	desc_lbl.add_theme_font_size_override("font_size", 15)
+	desc_lbl.add_theme_font_size_override("font_size", 24)
 	desc_lbl.add_theme_color_override("font_color", Color(0.60, 0.55, 0.45))
 	desc_lbl.autowrap_mode = TextServer.AUTOWRAP_WORD
 	desc_lbl.modulate.a = 0.0
@@ -83,8 +83,8 @@ func _build_ui() -> void:
 	# Enter button
 	var btn := Button.new()
 	btn.text = "ENTER THE FLOOR"
-	btn.custom_minimum_size = Vector2(380, 66)
-	btn.add_theme_font_size_override("font_size", 22)
+	btn.custom_minimum_size = Vector2(380, 90)
+	btn.add_theme_font_size_override("font_size", 34)
 	btn.modulate.a = 0.0
 	btn.name = "EnterBtn"
 	var style := StyleBoxFlat.new()
@@ -107,15 +107,18 @@ func _build_ui() -> void:
 	vbox.add_child(btn)
 
 func _animate_in() -> void:
-	var nodes_to_fade := ["FloorNumLbl", "NameLbl", "SubLbl", "Sep", "DescLbl", "EnterBtn"]
-	var delay := 0.3
-	for node_name in nodes_to_fade:
+	# Show content elements immediately — no initial blank screen
+	var instant_nodes := ["FloorNumLbl", "NameLbl", "SubLbl", "Sep", "DescLbl"]
+	for node_name in instant_nodes:
 		var node := find_child(node_name)
 		if node:
-			var t := create_tween()
-			t.tween_interval(delay)
-			t.tween_property(node, "modulate:a", 1.0, 0.6)
-			delay += 0.35
+			node.modulate.a = 1.0
+	# Fade in just the button with a short delay
+	var btn := find_child("EnterBtn")
+	if btn:
+		var t := create_tween()
+		t.tween_interval(0.4)
+		t.tween_property(btn, "modulate:a", 1.0, 0.3)
 
 func _on_enter() -> void:
 	AudioManager.play_sfx("button_click")
